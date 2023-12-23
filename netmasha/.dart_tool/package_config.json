@@ -50,6 +50,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "floating_navbar",
+      "rootUri": "file:///Users/reema/.pub-cache/hosted/pub.dev/floating_navbar-2.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "floating_navigation_bar",
       "rootUri": "file:///Users/reema/.pub-cache/hosted/pub.dev/floating_navigation_bar-0.0.5",
       "packageUri": "lib/",
@@ -218,7 +224,7 @@
       "languageVersion": "3.2"
     }
   ],
-  "generated": "2023-12-22T13:48:39.544199Z",
+  "generated": "2023-12-23T11:40:34.663698Z",
   "generator": "pub",
   "generatorVersion": "3.2.0"
 }
