@@ -8,14 +8,9 @@ import 'package:netmasha/screens/table_screen.dart';
 import 'package:floating_navbar/floating_navbar.dart';
 import 'package:netmasha/styles/colors.dart';
 
-class NavBar extends StatefulWidget {
+class NavBar extends StatelessWidget {
   const NavBar({super.key});
 
-  @override
-  State<NavBar> createState() => _NavBarScreenState();
-}
-
-class _NavBarScreenState extends State<NavBar> {
   @override
   Widget build(BuildContext context) {
     return FloatingNavBar(
