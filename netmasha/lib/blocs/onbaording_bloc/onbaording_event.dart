@@ -1,6 +1,5 @@
 abstract class OnbaordingEvent {
   final int index;
-
   OnbaordingEvent(this.index);
 }
 

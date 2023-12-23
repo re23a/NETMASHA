@@ -15,11 +15,11 @@ class NavBar extends StatefulWidget {
 class _NavBarScreenState extends State<NavBar> {
   PageController? controller = PageController();
   List<Widget> listScreens = [
-    HomeScreen(),
-    LocationScreen(),
-    TableScreen(),
-    SubscriptionsScreen(),
-    ProfileScreen()
+    const HomeScreen(),
+    const LocationScreen(),
+    const TableScreen(),
+    const SubscriptionsScreen(),
+    const ProfileScreen()
   ];
   int indexSelected = 0;
   @override

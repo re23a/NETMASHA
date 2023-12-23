@@ -87,8 +87,9 @@ class LoginScreen extends StatelessWidget {
               const SizedBox(
                 height: 50,
               ),
-              Button2(
+              Button(
                 txt: 'دخول',
+                isBigButten: true,
                 onTap: () {
                   Navigator.pushAndRemoveUntil(
                     context,

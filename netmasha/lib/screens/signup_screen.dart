@@ -50,8 +50,9 @@ class SignUpScreen extends StatelessWidget {
           const SizedBox(
             height: 40,
           ),
-          Button2(
+          Button(
             txt: 'تسجيل',
+            isBigButten: true,
             onTap: () {
               Navigator.pushAndRemoveUntil(
                 context,

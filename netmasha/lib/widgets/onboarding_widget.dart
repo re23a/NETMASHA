@@ -32,7 +32,7 @@ class CircleIndex extends StatelessWidget {
       width: 10,
       height: 10,
       decoration: ShapeDecoration(
-        color: isActive ? Color(0xFF3E0699) : Colors.grey,
+        color: isActive ? const Color(0xFF3E0699) : Colors.grey,
         shape: const OvalBorder(),
       ),
     );

@@ -8,8 +8,6 @@ environment:
 
 dependencies:
   another_flutter_splash_screen: ^1.2.0
-
-
   floating_navigation_bar: ^0.0.5
   flutter:
     sdk: flutter

@@ -1,9 +1,11 @@
-abstract class OnbaordingState {
+abstract class OnbaordingState {}
+
+class CurrentOnbaordingState extends OnbaordingState {
   final int index;
-
-  OnbaordingState(this.index);
+  final String text;
+  final String image;
+  CurrentOnbaordingState(
+      {required this.index, required this.text, required this.image});
 }
 
-class NextOnbaording extends OnbaordingState {
-  NextOnbaording(super.index);
-}
+class EndBoardingState extends OnbaordingState {}
