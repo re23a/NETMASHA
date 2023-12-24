@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:netmasha/styles/colors.dart';
 
 class Button extends StatelessWidget {
   const Button({
@@ -6,10 +7,12 @@ class Button extends StatelessWidget {
     required this.txt,
     required this.onTap,
     required this.isBigButten,
+    this.inHomePage = false,
   });
   final String txt;
   final Function() onTap;
   final bool isBigButten;
+  final bool inHomePage;
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -18,7 +21,7 @@ class Button extends StatelessWidget {
         width: isBigButten ? 236 : 100,
         height: 41,
         decoration: ShapeDecoration(
-          color: const Color(0xFF3E0699),
+          color: inHomePage ? green : purple,
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
         ),
         child: Center(
