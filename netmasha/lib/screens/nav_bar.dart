@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:netmasha/screens/home_screen.dart';
 import 'package:netmasha/screens/location_screen.dart';
 import 'package:netmasha/screens/profile_screen.dart';
-import 'package:netmasha/screens/reservation_screen.dart';
+import 'package:netmasha/screens/Reservations/reservation_screen.dart';
 import 'package:netmasha/screens/table_screen.dart';
 import 'package:floating_navbar/floating_navbar.dart';
 import 'package:netmasha/styles/colors.dart';
