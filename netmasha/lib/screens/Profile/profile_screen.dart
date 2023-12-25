@@ -17,78 +17,71 @@ class ProfileScreen extends StatelessWidget {
       backgroundColor: bg,
       body: Column(
         children: [
-          Container(
-            width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height / 3,
-            decoration: const ShapeDecoration(
-              gradient: LinearGradient(
-                begin: Alignment(-0.70, -0.71),
-                end: Alignment(0.7, 0.71),
-                colors: [Color(0xFF6235AD), Color(0xFF450F9D)],
-              ),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(14),
-                  bottomRight: Radius.circular(14),
-                ),
-              ),
-            ),
-            child: Padding(
-              padding: const EdgeInsets.only(top: 80),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Container(
-                    width: 101,
-                    height: 101,
-                    decoration: ShapeDecoration(
-                      color: lightPurple,
-                      shape: const OvalBorder(),
-                    ),
-                    child: Icon(
-                      Icons.person_outline_outlined,
-                      size: 60,
-                      color: green,
+          Stack(
+            children: [
+              Container(
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height / 3,
+                decoration: const ShapeDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment(-0.70, -0.71),
+                    end: Alignment(0.7, 0.71),
+                    colors: [Color(0xFF6235AD), Color(0xFF450F9D)],
+                  ),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(14),
+                      bottomRight: Radius.circular(14),
                     ),
                   ),
-                  badges.Badge(
-                    badgeStyle:
-                        badges.BadgeStyle(badgeColor: green, elevation: 0),
-                    position: badges.BadgePosition.topEnd(
-                      top: -20,
-                    ),
-                    showBadge: true,
-                    ignorePointer: false,
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => EditProfilePage()));
-                    },
-                    badgeContent: Icon(
-                      Icons.edit,
-                      color: bg,
-                    ),
-                    child: Container(
-                      width: 101,
-                      height: 45,
-                      decoration: BoxDecoration(
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 50),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Container(
+                        width: 101,
+                        height: 101,
+                        decoration: ShapeDecoration(
                           color: lightPurple,
-                          borderRadius: BorderRadius.circular(14)),
-                      child: Center(
+                          shape: const OvalBorder(),
+                        ),
+                        child: Icon(
+                          Icons.person_outline_outlined,
+                          size: 60,
+                          color: green,
+                        ),
+                      ),
+                      Center(
                         child: Text(
                           "userName",
                           style: TextStyle(
-                              fontSize: 16,
+                              fontSize: 18,
                               fontWeight: FontWeight.w600,
-                              color: black),
+                              color: bg),
                         ),
                       ),
-                    ),
+                    ],
                   ),
-                ],
+                ),
               ),
-            ),
+              Positioned(
+                  top: 60,
+                  right: 320,
+                  child: IconButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => EditProfilePage()));
+                      },
+                      icon: Icon(
+                        Icons.settings,
+                        color: bg,
+                        size: 30,
+                      )))
+            ],
           ),
           Column(
             children: [

@@ -95,7 +95,7 @@ class LoginScreen extends StatelessWidget {
               onTap: () {
                 Navigator.pushAndRemoveUntil(
                   context,
-                  MaterialPageRoute(builder: (context) => const NavBar()),
+                  MaterialPageRoute(builder: (context) =>  NavBar()),
                   (route) => false,
                 );
               },

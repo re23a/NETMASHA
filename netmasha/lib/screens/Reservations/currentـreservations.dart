@@ -13,14 +13,16 @@ class CurrentReservations extends StatelessWidget {
                   opacity: 0.50,
                   child: Column(
                     children: [
-                      Image.asset("assets/No data-cuate.png"),
+                      SizedBox(
+                          height: 300,
+                          width: 300,
+                          child: Image.asset("assets/No data-cuate.png")),
                       const Text(
                         "لا يوجد حجوزات حالية",
                         style: TextStyle(fontSize: 18),
                       )
                     ],
-                  ))
-                  )
+                  )))
         ],
       ),
     );
