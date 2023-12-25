@@ -5,9 +5,25 @@ class PreviousReservations extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Column(
-        children: [Center(child: Text("Previous reservations"))],
+        children: [
+          Center(
+              child: Opacity(
+                  opacity: 0.50,
+                  child: Column(
+                    children: [
+                      SizedBox(
+                          height: 300,
+                          width: 300,
+                          child: Image.asset("assets/No data-cuate.png")),
+                      const Text(
+                        "لا يوجد حجوزات سابقة",
+                        style: TextStyle(fontSize: 18),
+                      )
+                    ],
+                  )))
+        ],
       ),
     );
   }

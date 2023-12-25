@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:netmasha/screens/Profile/edit_proflie.dart';
 import 'package:netmasha/screens/Profile/favorite_page.dart';
+import 'package:netmasha/screens/Profile/provider_info.dart';
 import 'package:netmasha/styles/colors.dart';
 import 'package:badges/badges.dart' as badges;
 import 'package:netmasha/widgets/buttons.dart';
@@ -91,7 +92,14 @@ class ProfileScreen extends StatelessWidget {
           ),
           Column(
             children: [
-              const ProviderContainer(),
+              ProviderContainer(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const ProviderInfo()));
+                },
+              ),
               ProfileContainersClickable(
                 icon: Icon(
                   Icons.favorite_border_rounded,

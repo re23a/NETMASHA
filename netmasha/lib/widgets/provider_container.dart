@@ -4,12 +4,13 @@ import 'package:netmasha/styles/colors.dart';
 class ProviderContainer extends StatelessWidget {
   const ProviderContainer({
     super.key,
+    required this.onTap,
   });
-
+  final Function() onTap;
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: onTap,
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 30),
         child: Container(

@@ -13,21 +13,27 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider<OnbaordingBloc>(
-            create: (BuildContext context) => OnbaordingBloc()),
-      ],
-      child: const MaterialApp(
-          locale: Locale('ar'),
-          localizationsDelegates: [
-            GlobalMaterialLocalizations.delegate,
-            GlobalWidgetsLocalizations.delegate,
-            GlobalCupertinoLocalizations.delegate
-          ],
-          supportedLocales: [Locale('ar')],
-          debugShowCheckedModeBanner: false,
-          home: SplashScreen()),
+    return GestureDetector(
+      onTap: () {
+        FocusScope.of(context).requestFocus(FocusNode());
+      },
+      child: MultiBlocProvider(
+        providers: [
+          BlocProvider<OnbaordingBloc>(
+              create: (BuildContext context) => OnbaordingBloc()),
+        ],
+        child: MaterialApp(
+            theme: ThemeData(fontFamily: "IBM Plex Sans Arabic"),
+            locale: const Locale('ar'),
+            localizationsDelegates: const [
+              GlobalMaterialLocalizations.delegate,
+              GlobalWidgetsLocalizations.delegate,
+              GlobalCupertinoLocalizations.delegate
+            ],
+            supportedLocales: const [Locale('ar')],
+            debugShowCheckedModeBanner: false,
+            home: const SplashScreen()),
+      ),
     );
   }
 }
