@@ -14,7 +14,9 @@ class DetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: bg,
-      bottomSheet: const Price(),
+      bottomSheet: const Price(
+        price: '406ر.س',
+      ),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Column(

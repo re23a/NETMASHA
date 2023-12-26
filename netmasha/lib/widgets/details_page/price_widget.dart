@@ -5,9 +5,9 @@ import 'package:netmasha/widgets/buttons.dart';
 
 class Price extends StatelessWidget {
   const Price({
-    super.key,
+    super.key, required this.price,
   });
-
+  final String price;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -21,17 +21,15 @@ class Price extends StatelessWidget {
             Button(
                 txt: 'احجز',
                 onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => PaymentScreen()));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => PaymentScreen()));
                 },
                 isBigButten: true),
             const SizedBox(
               width: 8,
             ),
             Text(
-              '406ر.س',
+price,
               style: TextStyle(
                 color: black,
                 fontSize: 16,
