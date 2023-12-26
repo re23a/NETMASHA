@@ -3,7 +3,6 @@ import 'package:netmasha/screens/Profile/edit_proflie.dart';
 import 'package:netmasha/screens/Profile/favorite_page.dart';
 import 'package:netmasha/screens/Profile/provider_info.dart';
 import 'package:netmasha/styles/colors.dart';
-import 'package:badges/badges.dart' as badges;
 import 'package:netmasha/widgets/buttons.dart';
 import 'package:netmasha/widgets/profile_containers.dart';
 import 'package:netmasha/widgets/provider_container.dart';
