@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:netmasha/screens/messages_screen.dart';
 
 class Chat extends StatelessWidget {
   const Chat({
@@ -7,13 +8,21 @@ class Chat extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Row(
+    return Row(
       children: [
-        Icon(
-          Icons.chat_outlined,
-          color: Colors.white,
+        IconButton(
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const MessagesScreen()));
+          },
+          icon: const Icon(
+            Icons.chat_outlined,
+            color: Colors.white,
+          ),
         ),
-        SizedBox(
+        const SizedBox(
           width: 15,
         ),
       ],
