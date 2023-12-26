@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:netmasha/screens/nav_bar.dart';
+import 'package:netmasha/screens/otp_screen.dart';
 import 'package:netmasha/styles/colors.dart';
 import 'package:netmasha/widgets/buttons.dart';
 import 'package:netmasha/widgets/text_field.dart';
@@ -13,6 +13,7 @@ class SignUpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: bg,
       appBar: AppBar(
         backgroundColor: bg,
@@ -54,10 +55,9 @@ class SignUpScreen extends StatelessWidget {
             txt: 'تسجيل',
             isBigButten: true,
             onTap: () {
-              Navigator.pushAndRemoveUntil(
+              Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const NavBar()),
-                (route) => false,
+                MaterialPageRoute(builder: (context) => OtpScreen()),
               );
             },
           )
