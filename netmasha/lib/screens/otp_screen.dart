@@ -86,7 +86,7 @@ class OtpScreen extends StatelessWidget {
               onTap: () {
                 Navigator.pushAndRemoveUntil(
                   context,
-                  MaterialPageRoute(builder: (context) =>  NavBar()),
+                  MaterialPageRoute(builder: (context) => NavBar()),
                   (route) => false,
                 );
               },

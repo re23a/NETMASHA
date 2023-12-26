@@ -29,7 +29,7 @@ class ChatTextField extends StatelessWidget {
               icon: const Icon(Icons.send),
             ),
             filled: true,
-            fillColor: Color.fromARGB(61, 158, 158, 158),
+            fillColor: const Color.fromARGB(147, 158, 158, 158),
             focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(30),
                 borderSide: BorderSide.none),

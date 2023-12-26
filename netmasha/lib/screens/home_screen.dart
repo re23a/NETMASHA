@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:netmasha/styles/colors.dart';
-import 'package:netmasha/widgets/activities.dart';
-import 'package:netmasha/widgets/advertisements_oard.dart';
-import 'package:netmasha/widgets/chat_button.dart';
-import 'package:netmasha/widgets/logo.dart';
-import 'package:netmasha/widgets/organizations.dart';
-import 'package:netmasha/widgets/recommendations.dart';
-import 'package:netmasha/widgets/title_widget.dart';
-import 'package:netmasha/widgets/user_name_widget.dart';
+import 'package:netmasha/widgets/home_page/activities.dart';
+import 'package:netmasha/widgets/home_page/advertisements_oard.dart';
+import 'package:netmasha/widgets/home_page/chat_button.dart';
+import 'package:netmasha/widgets/home_page/logo.dart';
+import 'package:netmasha/widgets/home_page/organizations.dart';
+import 'package:netmasha/widgets/home_page/recommendations.dart';
+import 'package:netmasha/widgets/home_page/title_widget.dart';
+import 'package:netmasha/widgets/home_page/user_name_widget.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});

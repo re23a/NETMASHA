@@ -14,12 +14,6 @@
       "languageVersion": "2.18"
     },
     {
-      "name": "badges",
-      "rootUri": "file:///Users/reema/.pub-cache/hosted/pub.dev/badges-3.1.2",
-      "packageUri": "lib/",
-      "languageVersion": "3.0"
-    },
-    {
       "name": "bloc",
       "rootUri": "file:///Users/reema/.pub-cache/hosted/pub.dev/bloc-8.1.2",
       "packageUri": "lib/",
@@ -62,18 +56,6 @@
       "languageVersion": "2.12"
     },
     {
-      "name": "floating_navbar",
-      "rootUri": "file:///Users/reema/.pub-cache/hosted/pub.dev/floating_navbar-2.0.2",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
-    },
-    {
-      "name": "floating_navigation_bar",
-      "rootUri": "file:///Users/reema/.pub-cache/hosted/pub.dev/floating_navigation_bar-0.0.5",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
-    },
-    {
       "name": "flutter",
       "rootUri": "file:///Users/reema/development/flutter/packages/flutter",
       "packageUri": "lib/",
@@ -110,8 +92,8 @@
       "languageVersion": "3.2"
     },
     {
-      "name": "glassmorphism",
-      "rootUri": "file:///Users/reema/.pub-cache/hosted/pub.dev/glassmorphism-3.0.0",
+      "name": "glass",
+      "rootUri": "file:///Users/reema/.pub-cache/hosted/pub.dev/glass-1.0.2+1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -142,12 +124,6 @@
     {
       "name": "meta",
       "rootUri": "file:///Users/reema/.pub-cache/hosted/pub.dev/meta-1.10.0",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
-    },
-    {
-      "name": "molten_navigationbar_flutter",
-      "rootUri": "file:///Users/reema/.pub-cache/hosted/pub.dev/molten_navigationbar_flutter-1.0.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -218,12 +194,6 @@
       "languageVersion": "3.0"
     },
     {
-      "name": "translucent_navigation_bar",
-      "rootUri": "file:///Users/reema/.pub-cache/hosted/pub.dev/translucent_navigation_bar-1.0.0",
-      "packageUri": "lib/",
-      "languageVersion": "2.15"
-    },
-    {
       "name": "vector_math",
       "rootUri": "file:///Users/reema/.pub-cache/hosted/pub.dev/vector_math-2.1.4",
       "packageUri": "lib/",
@@ -242,7 +212,7 @@
       "languageVersion": "3.2"
     }
   ],
-  "generated": "2023-12-25T21:02:29.743465Z",
+  "generated": "2023-12-26T09:36:12.008335Z",
   "generator": "pub",
   "generatorVersion": "3.2.0"
 }
