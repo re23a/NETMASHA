@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:netmasha/blocs/auth_bloc/auth_bloc.dart';
+import 'package:netmasha/blocs/auth_bloc/auth_event.dart';
 import 'package:netmasha/screens/nav_bar.dart';
 import 'package:netmasha/styles/colors.dart';
 import 'package:netmasha/widgets/buttons.dart';
@@ -84,9 +87,11 @@ class OtpScreen extends StatelessWidget {
             Button(
               txt: 'تحقق',
               onTap: () {
+                context.read<AuthBloc>().add(OTPEvent(
+                    otpCode: otpController.text, email: "email", type: "type"));
                 Navigator.pushAndRemoveUntil(
                   context,
-                  MaterialPageRoute(builder: (context) =>  NavBar()),
+                  MaterialPageRoute(builder: (context) => NavBar()),
                   (route) => false,
                 );
               },
