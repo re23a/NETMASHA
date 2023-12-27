@@ -66,7 +66,10 @@ class SignUpScreen extends StatelessWidget {
                   confirmPassword: phoneController.text));
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => OtpScreen()),
+                MaterialPageRoute(
+                    builder: (context) => OtpScreen(
+                          userEmail: emailController.text,
+                        )),
               );
             },
           )
