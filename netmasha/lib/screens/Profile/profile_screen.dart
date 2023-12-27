@@ -4,8 +4,8 @@ import 'package:netmasha/screens/Profile/favorite_page.dart';
 import 'package:netmasha/screens/Profile/provider_info.dart';
 import 'package:netmasha/styles/colors.dart';
 import 'package:netmasha/widgets/buttons.dart';
-import 'package:netmasha/widgets/profile_containers.dart';
-import 'package:netmasha/widgets/provider_container.dart';
+import 'package:netmasha/widgets/profile_page/profile_containers.dart';
+import 'package:netmasha/widgets/profile_page/provider_container.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});

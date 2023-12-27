@@ -17,14 +17,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.11.0"
-  badges:
-    dependency: "direct main"
-    description:
-      name: badges
-      sha256: a7b6bbd60dce418df0db3058b53f9d083c22cdb5132a052145dc267494df0b84
-      url: "https://pub.dev"
-    source: hosted
-    version: "3.1.2"
   bloc:
     dependency: transitive
     description:
@@ -152,6 +144,8 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  glass:
+    dependency: "direct main"
   flutter_web_plugins:
     dependency: transitive
     description: flutter
@@ -160,8 +154,8 @@ packages:
   glassmorphism:
     dependency: transitive
     description:
-      name: glassmorphism
-      sha256: c0f65ea2681d4ee6d4125b947946d983335cd44765e835cdc039894b076a6e31
+      name: glass
+      sha256: "5b321fcc05155159cd6ea3b8dd6f298602f7dac8bf36c2a4a680a772d4c1cf24"
       url: "https://pub.dev"
     source: hosted
     version: "3.0.0"
@@ -221,14 +215,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.10.0"
-  molten_navigationbar_flutter:
-    dependency: "direct main"
-    description:
-      name: molten_navigationbar_flutter
-      sha256: "875f0771b7b259eaa6c1f4814262870799d2ef9f6fe9ecc0868ccbe271c2bc74"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.0.1"
   nested:
     dependency: transitive
     description:
