@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 class Apis {
-  final String _urlApi = "https://netmasha.onrender.com";
+  final String _urlApi = "netmasha.onrender.com";
 
   Future<http.Response> postMethod({
     required Map<String, dynamic> body,
