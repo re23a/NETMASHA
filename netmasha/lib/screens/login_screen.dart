@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:netmasha/blocs/auth_bloc/auth_bloc.dart';
+import 'package:netmasha/blocs/auth_bloc/auth_event.dart';
 import 'package:netmasha/screens/nav_bar.dart';
 import 'package:netmasha/screens/signup_screen.dart';
 import 'package:netmasha/styles/colors.dart';
@@ -93,9 +96,12 @@ class LoginScreen extends StatelessWidget {
               txt: 'دخول',
               isBigButten: true,
               onTap: () {
+                context.read<AuthBloc>().add(AuthLoginEvent(
+                    email: emailController.text,
+                    password: passwordController.text));
                 Navigator.pushAndRemoveUntil(
                   context,
-                  MaterialPageRoute(builder: (context) =>  NavBar()),
+                  MaterialPageRoute(builder: (context) => NavBar()),
                   (route) => false,
                 );
               },

@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:netmasha/blocs/auth_bloc/auth_bloc.dart';
+import 'package:netmasha/blocs/auth_bloc/auth_event.dart';
 import 'package:netmasha/screens/otp_screen.dart';
 import 'package:netmasha/styles/colors.dart';
 import 'package:netmasha/widgets/buttons.dart';
@@ -55,6 +58,12 @@ class SignUpScreen extends StatelessWidget {
             txt: 'تسجيل',
             isBigButten: true,
             onTap: () {
+              context.read<AuthBloc>().add(AuthRegisterEvent(
+                  email: emailController.text,
+                  password: passwordController.text,
+                  name: nameController.text,
+                  phone: phoneController.text,
+                  confirmPassword: phoneController.text));
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => OtpScreen()),

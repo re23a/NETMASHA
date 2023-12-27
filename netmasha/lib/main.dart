@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:netmasha/blocs/auth_bloc/auth_bloc.dart';
 import 'package:netmasha/blocs/onbaording_bloc/onbaording_bloc.dart';
 import 'package:netmasha/screens/splash_screen.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -21,6 +22,7 @@ class MainApp extends StatelessWidget {
         providers: [
           BlocProvider<OnbaordingBloc>(
               create: (BuildContext context) => OnbaordingBloc()),
+          BlocProvider<AuthBloc>(create: (BuildContext context) => AuthBloc()),
         ],
         child: MaterialApp(
             theme: ThemeData(fontFamily: "IBM Plex Sans Arabic"),
