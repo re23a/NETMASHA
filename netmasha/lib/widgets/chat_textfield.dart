@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:netmasha/styles/colors.dart';
 
 class ChatTextField extends StatelessWidget {
   const ChatTextField({
