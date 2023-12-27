@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:netmasha/styles/colors.dart';
-import 'package:netmasha/widgets/message_container.dart';
 import 'package:netmasha/widgets/chat_textfield.dart';
 
 class ChatScreen extends StatelessWidget {

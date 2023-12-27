@@ -20,13 +20,15 @@ class SignUpScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return BlocListener<AuthBloc, AuthState>(
       listener: (context, state) {
         if (state is AuthRegisterSuccessState) {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => OtpScreen()),
+            MaterialPageRoute(
+                builder: (context) => OtpScreen(
+                      userEmail: emailController.text,
+                    )),
           );
         } else if (state is AuthRegisterErrorState) {
           ScaffoldMessenger.of(context).showSnackBar(
