@@ -2,7 +2,7 @@ import 'package:http/http.dart' as http;
 import 'package:netmasha/api/api_all_methods.dart';
 
 class Auth extends Apis {
-  final String _registration = '/auth/create_user';
+  final String _registration = '/auth/create_account';
   final String _verification = '/auth/otp';
   final String _login = '/auth/login';
 
