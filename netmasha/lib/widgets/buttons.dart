@@ -8,13 +8,13 @@ class Button extends StatelessWidget {
     required this.onTap,
     required this.isBigButten,
     this.inHomePage = false,
-    this.isPayment = false,
+
   });
   final String txt;
   final Function() onTap;
   final bool isBigButten;
   final bool inHomePage;
-  final bool isPayment;
+
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +32,7 @@ class Button extends StatelessWidget {
             txt,
             style: TextStyle(
                 color: Colors.white,
-                fontSize: inHomePage ? 12 : 18,
+                fontSize: inHomePage ? 16 : 18,
                 fontWeight: FontWeight.w600),
           ),
         ),

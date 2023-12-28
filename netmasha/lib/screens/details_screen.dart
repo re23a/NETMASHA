@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:netmasha/screens/chat_screen.dart';
+import 'package:netmasha/screens/payment_screen.dart';
 import 'package:netmasha/styles/colors.dart';
+import 'package:netmasha/widgets/buttons.dart';
 import 'package:netmasha/widgets/details_page/ArrowBack.dart';
 import 'package:netmasha/widgets/details_page/DescriptionBox.dart';
 import 'package:netmasha/widgets/details_page/InfoBox.dart';
 import 'package:netmasha/widgets/details_page/image_widget.dart';
-import 'package:netmasha/widgets/details_page/price_widget.dart';
 
 class DetailsScreen extends StatelessWidget {
   const DetailsScreen({super.key});
@@ -14,8 +15,21 @@ class DetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: bg,
-      bottomSheet: const Price(
-        price: '406ر.س',
+      bottomSheet: SizedBox(
+        height: 100,
+        width: MediaQuery.of(context).size.width,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Button(
+                txt: 'احجز',
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => PaymentScreen()));
+                },
+                isBigButten: true),
+          ],
+        ),
       ),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
@@ -34,6 +48,8 @@ class DetailsScreen extends StatelessWidget {
               title: "ركوب الخيل",
               description:
                   'تجربة فريدة لركوب الخيل مع العائلة في اسطبل خاص يمنحك تجربة متميزة\nتجربة فريدة لركوب الخيل مع العائلة في اسطبل خاص يمنحك تجربة متميزةتجربة فريدة لركوب الخيل مع العائلة في اسطبل خاص يمنحك تجربة متميزةتجربة فريدة لركوب الخيل مع العائلة في اسطبل خاص يمنحك تجربة متميزة',
+              adults: '400 ر.س',
+              children: '400 ر.س',
             ),
             InfoBox(
               chat: () {

@@ -46,54 +46,13 @@ class Activities extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          'ركوب الخيل ',
-                          style: TextStyle(
-                            color: black,
-                            fontSize: 15,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                        Container(
-                          width: 65,
-                          height: 20,
-                          decoration: ShapeDecoration(
-                            color: Colors.white,
-                            shape: RoundedRectangleBorder(
-                              side: BorderSide(width: 0.50, color: purple),
-                              borderRadius: const BorderRadius.only(
-                                topRight: Radius.circular(10),
-                                bottomRight: Radius.circular(10),
-                              ),
-                            ),
-                          ),
-                          child: Center(
-                            child: Text.rich(
-                              TextSpan(
-                                children: [
-                                  TextSpan(
-                                    text: '300',
-                                    style: TextStyle(
-                                      color: purple,
-                                      fontSize: 14,
-                                    ),
-                                  ),
-                                  TextSpan(
-                                    text: ' SR',
-                                    style: TextStyle(
-                                      color: purple,
-                                      fontSize: 14,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        )
-                      ],
+                    Text(
+                      'ركوب الخيل ',
+                      style: TextStyle(
+                        color: black,
+                        fontSize: 15,
+                        fontWeight: FontWeight.w500,
+                      ),
                     ),
                     Text(
                       'تجربة فريدة لركوب الخيل مع العائلة في اسطبل خاص يمنحك تجربة متميزة',
@@ -110,7 +69,7 @@ class Activities extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Button(
-                          txt: 'قراءة المزيد',
+                          txt: 'احجز',
                           onTap: () {
                             Navigator.push(
                                 context,
