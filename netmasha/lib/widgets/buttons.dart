@@ -8,18 +8,21 @@ class Button extends StatelessWidget {
     required this.onTap,
     required this.isBigButten,
     this.inHomePage = false,
+    this.isPayment = false,
   });
   final String txt;
   final Function() onTap;
   final bool isBigButten;
   final bool inHomePage;
+  final bool isPayment;
+
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
       child: Container(
-        width: isBigButten ? 236 : 100,
-        height: 41,
+        width: isBigButten ? 270 : 90,
+        height: isBigButten ? 45 : 35,
         decoration: ShapeDecoration(
           color: inHomePage ? green : purple,
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
@@ -27,10 +30,10 @@ class Button extends StatelessWidget {
         child: Center(
           child: Text(
             txt,
-            style: const TextStyle(
-              color: Colors.white,
-              fontSize: 16,
-            ),
+            style: TextStyle(
+                color: Colors.white,
+                fontSize: inHomePage ? 12 : 18,
+                fontWeight: FontWeight.w600),
           ),
         ),
       ),

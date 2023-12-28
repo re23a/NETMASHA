@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:netmasha/screens/nav_bar.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:netmasha/blocs/auth_bloc/auth_bloc.dart';
+import 'package:netmasha/blocs/auth_bloc/auth_event.dart';
+import 'package:netmasha/screens/otp_screen.dart';
 import 'package:netmasha/styles/colors.dart';
 import 'package:netmasha/widgets/buttons.dart';
 import 'package:netmasha/widgets/text_field.dart';
@@ -13,6 +16,7 @@ class SignUpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: bg,
       appBar: AppBar(
         backgroundColor: bg,
@@ -54,10 +58,15 @@ class SignUpScreen extends StatelessWidget {
             txt: 'تسجيل',
             isBigButten: true,
             onTap: () {
-              Navigator.pushAndRemoveUntil(
+              context.read<AuthBloc>().add(AuthRegisterEvent(
+                  email: emailController.text,
+                  password: passwordController.text,
+                  name: nameController.text,
+                  phone: phoneController.text,
+                  confirmPassword: phoneController.text));
+              Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const NavBar()),
-                (route) => false,
+                MaterialPageRoute(builder: (context) => OtpScreen()),
               );
             },
           )

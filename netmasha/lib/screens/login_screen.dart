@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:netmasha/blocs/auth_bloc/auth_bloc.dart';
+import 'package:netmasha/blocs/auth_bloc/auth_event.dart';
 import 'package:netmasha/screens/nav_bar.dart';
 import 'package:netmasha/screens/signup_screen.dart';
 import 'package:netmasha/styles/colors.dart';
@@ -12,6 +15,7 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: bg,
       appBar: AppBar(
         backgroundColor: purple,
@@ -24,82 +28,85 @@ class LoginScreen extends StatelessWidget {
         ),
       ),
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.only(top: 200),
-          child: Column(
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
-                    child: Text(
-                      'تسجيل الدخول',
+        child: Column(
+          children: [
+            SizedBox(
+              height: MediaQuery.of(context).size.height / 6,
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: Text(
+                    'تسجيل الدخول',
+                    style: TextStyle(
+                      color: black,
+                      fontSize: 24,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                ),
+                CustomTextField(
+                  controller: emailController,
+                  lableText: 'البريد الإلكتروني',
+                  hintText: '******@gmail.com',
+                ),
+                CustomTextField(
+                    controller: passwordController,
+                    lableText: 'كلمة المرور',
+                    hintText: '***********',
+                    isPassword: true),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "ليس لديك حساب ؟   ",
                       style: TextStyle(
                         color: black,
-                        fontSize: 24,
+                        fontSize: 14,
                         fontWeight: FontWeight.w400,
                       ),
                     ),
-                  ),
-                  CustomTextField(
-                    controller: emailController,
-                    lableText: 'البريد الإلكتروني',
-                    hintText: '******@gmail.com',
-                  ),
-                  CustomTextField(
-                      controller: passwordController,
-                      lableText: 'كلمة المرور',
-                      hintText: '***********',
-                      isPassword: true),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "ليس لديك حساب ؟   ",
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => SignUpScreen()));
+                      },
+                      child: Text(
+                        'تسجيل جديد',
                         style: TextStyle(
                           color: black,
-                          fontSize: 14,
+                          fontSize: 16,
                           fontWeight: FontWeight.w400,
+                          decoration: TextDecoration.underline,
                         ),
                       ),
-                      InkWell(
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => SignUpScreen()));
-                        },
-                        child: Text(
-                          'تسجيل جديد',
-                          style: TextStyle(
-                            color: black,
-                            fontSize: 16,
-                            fontWeight: FontWeight.w400,
-                            decoration: TextDecoration.underline,
-                          ),
-                        ),
-                      ),
-                    ],
-                  )
-                ],
-              ),
-              const SizedBox(
-                height: 50,
-              ),
-              Button(
-                txt: 'دخول',
-                isBigButten: true,
-                onTap: () {
-                  Navigator.pushAndRemoveUntil(
-                    context,
-                    MaterialPageRoute(builder: (context) => const NavBar()),
-                    (route) => false,
-                  );
-                },
-              )
-            ],
-          ),
+                    ),
+                  ],
+                )
+              ],
+            ),
+            const SizedBox(
+              height: 50,
+            ),
+            Button(
+              txt: 'دخول',
+              isBigButten: true,
+              onTap: () {
+                context.read<AuthBloc>().add(AuthLoginEvent(
+                    email: emailController.text,
+                    password: passwordController.text));
+                Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute(builder: (context) => NavBar()),
+                  (route) => false,
+                );
+              },
+            )
+          ],
         ),
       ),
     );
