@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:netmasha/screens/chat_screen.dart';
 import 'package:netmasha/styles/colors.dart';
-import 'package:netmasha/widgets/UsersList.dart';
+import 'package:netmasha/widgets/ResultContainer.dart';
 
-class MessagesScreen extends StatelessWidget {
-  const MessagesScreen({super.key});
+class ResultScreen extends StatelessWidget {
+  const ResultScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +13,7 @@ class MessagesScreen extends StatelessWidget {
         title: Row(
           children: [
             Text(
-              "الرسائل",
+              'الجداول المقترحة',
               style: TextStyle(color: bg),
             ),
           ],
@@ -30,20 +29,19 @@ class MessagesScreen extends StatelessWidget {
           ),
         ),
       ),
-      body: Center(
-        child: ListView(
-          children: [
-            UsersList(
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const ChatScreen()));
-              },
-              name: 'صناعة الفخار',
-              time: '9:36 AM',
-            ),
-          ],
+      body: const Center(
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              ResultContainer(
+                title: 'زيارة اسطبل',
+                price: '200 ر.س',
+                image:
+                    "assets/amazing-young-cowgirl-sitting-horse-outdoors.jpg",
+              ),
+            ],
+          ),
         ),
       ),
     );
