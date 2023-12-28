@@ -39,7 +39,7 @@ class OtpScreen extends StatelessWidget {
           iconTheme: const IconThemeData(
             color: Colors.black, // Replace with your preferred color
           ),
-          backgroundColor: Colors.purple, // Replace with your preferred color
+          backgroundColor: purple, // Replace with your preferred color
           title: Image.asset(
               "assets/l.png"), // Replace with your actual asset path
           shape: const RoundedRectangleBorder(
@@ -72,6 +72,7 @@ class OtpScreen extends StatelessWidget {
               ),
               const SizedBox(height: 24),
               Row(
+                
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: List.generate(6, (index) {
                   return OtpTextField(controller: otpControllers[index]);

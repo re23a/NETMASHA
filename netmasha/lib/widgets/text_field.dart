@@ -54,42 +54,45 @@ class OtpTextField extends StatelessWidget {
   final TextEditingController controller;
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 50,
-      width: 50,
-      child: TextFormField(
-        onChanged: (value) {
-          if (value.length == 1) {
-            FocusScope.of(context).nextFocus();
-          }
-        },
-        inputFormatters: [
-          LengthLimitingTextInputFormatter(1),
-          FilteringTextInputFormatter.digitsOnly
-        ],
-        keyboardType: TextInputType.number,
-        controller: controller,
-        decoration: InputDecoration(
-            contentPadding: const EdgeInsets.symmetric(horizontal: 20),
-            border: const OutlineInputBorder(
-              borderRadius: BorderRadius.all(Radius.circular(10)),
-            ),
-            enabledBorder: OutlineInputBorder(
-              borderRadius: const BorderRadius.all(Radius.circular(10)),
-              borderSide: BorderSide(
-                color: stroke,
-                width: 1.0,
+    return Directionality(
+      textDirection: TextDirection.ltr,
+      child: SizedBox(
+        height: 50,
+        width: 50,
+        child: TextFormField(
+          onChanged: (value) {
+            if (value.length == 1) {
+              FocusScope.of(context).nextFocus();
+            }
+          },
+          inputFormatters: [
+            LengthLimitingTextInputFormatter(1),
+            FilteringTextInputFormatter.digitsOnly
+          ],
+          keyboardType: TextInputType.number,
+          controller: controller,
+          decoration: InputDecoration(
+              contentPadding: const EdgeInsets.symmetric(horizontal: 20),
+              border: const OutlineInputBorder(
+                borderRadius: BorderRadius.all(Radius.circular(10)),
               ),
-            ),
-            focusedBorder: OutlineInputBorder(
-              borderRadius: const BorderRadius.all(Radius.circular(10)),
-              borderSide: BorderSide(
-                color: purple,
-                width: 1.0,
+              enabledBorder: OutlineInputBorder(
+                borderRadius: const BorderRadius.all(Radius.circular(10)),
+                borderSide: BorderSide(
+                  color: stroke,
+                  width: 1.0,
+                ),
               ),
-            ),
-            filled: true,
-            fillColor: const Color(0xffF9F9F9)),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: const BorderRadius.all(Radius.circular(10)),
+                borderSide: BorderSide(
+                  color: purple,
+                  width: 1.0,
+                ),
+              ),
+              filled: true,
+              fillColor: const Color(0xffF9F9F9)),
+        ),
       ),
     );
   }
