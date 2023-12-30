@@ -8,6 +8,12 @@
       "languageVersion": "2.18"
     },
     {
+      "name": "args",
+      "rootUri": "file:///Users/reema/.pub-cache/hosted/pub.dev/args-2.4.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
       "name": "async",
       "rootUri": "file:///C:/Users/zezoo/AppData/Local/Pub/Cache/hosted/pub.dev/async-2.11.0",
       "packageUri": "lib/",
@@ -48,6 +54,12 @@
       "rootUri": "file:///C:/Users/zezoo/AppData/Local/Pub/Cache/hosted/pub.dev/collection-1.18.0",
       "packageUri": "lib/",
       "languageVersion": "2.18"
+    },
+    {
+      "name": "easy_date_timeline",
+      "rootUri": "file:///Users/reema/.pub-cache/hosted/pub.dev/easy_date_timeline-1.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
     },
     {
       "name": "fake_async",
@@ -98,6 +110,12 @@
       "languageVersion": "3.2"
     },
     {
+      "name": "flutter_svg",
+      "rootUri": "file:///Users/reema/.pub-cache/hosted/pub.dev/flutter_svg-2.0.9",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
       "name": "flutter_test",
       "rootUri": "file:///C:/flutter/flutter_windows_3.0.1-stable/flutter/packages/flutter_test",
       "packageUri": "lib/",
@@ -132,6 +150,12 @@
       "rootUri": "file:///C:/Users/zezoo/AppData/Local/Pub/Cache/hosted/pub.dev/http_parser-4.0.2",
       "packageUri": "lib/",
       "languageVersion": "2.12"
+    },
+    {
+      "name": "icons_plus",
+      "rootUri": "file:///Users/reema/.pub-cache/hosted/pub.dev/icons_plus-5.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.16"
     },
     {
       "name": "intl",
@@ -182,6 +206,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "path_parsing",
+      "rootUri": "file:///Users/reema/.pub-cache/hosted/pub.dev/path_parsing-1.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "path_provider_linux",
       "rootUri": "file:///C:/Users/zezoo/AppData/Local/Pub/Cache/hosted/pub.dev/path_provider_linux-2.2.1",
       "packageUri": "lib/",
@@ -200,6 +230,12 @@
       "languageVersion": "2.19"
     },
     {
+      "name": "petitparser",
+      "rootUri": "file:///Users/reema/.pub-cache/hosted/pub.dev/petitparser-6.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
       "name": "phosphor_flutter",
       "rootUri": "file:///C:/Users/zezoo/AppData/Local/Pub/Cache/hosted/pub.dev/phosphor_flutter-2.0.1",
       "packageUri": "lib/",
@@ -216,6 +252,12 @@
       "rootUri": "file:///C:/Users/zezoo/AppData/Local/Pub/Cache/hosted/pub.dev/plugin_platform_interface-2.1.7",
       "packageUri": "lib/",
       "languageVersion": "3.0"
+    },
+    {
+      "name": "progresso",
+      "rootUri": "file:///Users/reema/.pub-cache/hosted/pub.dev/progresso-0.3.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
     },
     {
       "name": "provider",
@@ -320,6 +362,24 @@
       "languageVersion": "2.17"
     },
     {
+      "name": "vector_graphics",
+      "rootUri": "file:///Users/reema/.pub-cache/hosted/pub.dev/vector_graphics-1.1.9+1",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
+      "name": "vector_graphics_codec",
+      "rootUri": "file:///Users/reema/.pub-cache/hosted/pub.dev/vector_graphics_codec-1.1.9+1",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
+      "name": "vector_graphics_compiler",
+      "rootUri": "file:///Users/reema/.pub-cache/hosted/pub.dev/vector_graphics_compiler-1.1.9+1",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
       "name": "vector_math",
       "rootUri": "file:///C:/Users/zezoo/AppData/Local/Pub/Cache/hosted/pub.dev/vector_math-2.1.4",
       "packageUri": "lib/",
@@ -344,13 +404,20 @@
       "languageVersion": "2.19"
     },
     {
+      "name": "xml",
+      "rootUri": "file:///Users/reema/.pub-cache/hosted/pub.dev/xml-6.5.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
       "name": "netmasha",
       "rootUri": "../",
       "packageUri": "lib/",
       "languageVersion": "3.2"
     }
   ],
-  "generated": "2023-12-28T08:09:50.578703Z",
+  "generated": "2023-12-30T06:53:52.417502Z",
+
   "generator": "pub",
   "generatorVersion": "3.2.0"
 }
