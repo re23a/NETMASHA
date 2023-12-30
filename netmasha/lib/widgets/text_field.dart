@@ -9,17 +9,20 @@ class CustomTextField extends StatelessWidget {
     required this.lableText,
     required this.hintText,
     this.isPassword = false,
+    this.isDescription = false,
   });
   final TextEditingController controller;
   final String lableText;
   final String hintText;
   final bool isPassword;
+  final bool isDescription;
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
       title: Text(lableText),
       subtitle: TextFormField(
+        maxLines: isDescription ? 5 : 1,
         obscureText: isPassword,
         controller: controller,
         decoration: InputDecoration(

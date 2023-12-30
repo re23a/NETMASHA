@@ -142,6 +142,7 @@ class ProfileScreen extends StatelessWidget {
                                               Navigator.pop(context);
                                             },
                                             isBigButten: false,
+                                            inHomePage: true,
                                           ),
                                           const SizedBox(width: 40),
                                           Button(
@@ -199,6 +200,7 @@ class ProfileScreen extends StatelessWidget {
                                               Navigator.pop(context);
                                             },
                                             isBigButten: false,
+                                            inHomePage: true,
                                           ),
                                           const SizedBox(width: 40),
                                           Button(

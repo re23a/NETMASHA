@@ -5,7 +5,7 @@ import 'package:netmasha/widgets/home_page/advertisements_oard.dart';
 import 'package:netmasha/widgets/home_page/chat_button.dart';
 import 'package:netmasha/widgets/home_page/logo.dart';
 import 'package:netmasha/widgets/home_page/organizations.dart';
-import 'package:netmasha/widgets/home_page/recommendations.dart';
+
 import 'package:netmasha/widgets/home_page/title_widget.dart';
 import 'package:netmasha/widgets/home_page/user_name_widget.dart';
 
@@ -19,7 +19,7 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: purple,
         actions: const [Chat()],
-        leading: const Logo(),
+        leading: const LogoLeading(),
         title: const UserNameWidget(),
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
@@ -44,8 +44,6 @@ class HomeScreen extends StatelessWidget {
                   children: [
                     TitleWidget(txt: 'ابرز الأنشطة'),
                     Activities(),
-                    TitleWidget(txt: 'توصيات لك'),
-                    Recommendations(),
                     TitleWidget(txt: 'ابرز الجهات'),
                     Organizations()
                   ],

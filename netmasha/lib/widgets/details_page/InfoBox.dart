@@ -18,15 +18,8 @@ class InfoBox extends StatelessWidget {
       child: Container(
         height: 80,
         decoration: BoxDecoration(
-          color: lightPurple,
+          color: lightGreen,
           borderRadius: BorderRadius.circular(15),
-          boxShadow: const [
-            BoxShadow(
-              color: Color.fromARGB(157, 158, 158, 158),
-              blurRadius: 4,
-              offset: Offset(4, 8),
-            ),
-          ],
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,

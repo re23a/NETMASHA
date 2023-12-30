@@ -36,10 +36,10 @@ class OtpScreen extends StatelessWidget {
       child: Scaffold(
         backgroundColor: bg, // Make sure bg is a defined color
         appBar: AppBar(
-          iconTheme: const IconThemeData(
-            color: Colors.black, // Replace with your preferred color
+          iconTheme: IconThemeData(
+            color: bg, // Replace with your preferred color
           ),
-          backgroundColor: Colors.purple, // Replace with your preferred color
+          backgroundColor: purple, // Replace with your preferred color
           title: Image.asset(
               "assets/l.png"), // Replace with your actual asset path
           shape: const RoundedRectangleBorder(

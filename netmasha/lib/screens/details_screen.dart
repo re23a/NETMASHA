@@ -15,17 +15,20 @@ class DetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: bg,
-      bottomSheet: SizedBox(
+      bottomSheet: Container(
+        color: bg,
         height: 100,
         width: MediaQuery.of(context).size.width,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Button(
-                txt: 'احجز',
+                txt: ' احجز الآن',
                 onTap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => PaymentScreen()));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const PaymentScreen()));
                 },
                 isBigButten: true),
           ],
