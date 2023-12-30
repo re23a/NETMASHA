@@ -72,6 +72,7 @@ class OtpScreen extends StatelessWidget {
               ),
               const SizedBox(height: 24),
               Row(
+                
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: List.generate(6, (index) {
                   return OtpTextField(controller: otpControllers[index]);
