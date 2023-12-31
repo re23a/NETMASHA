@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:netmasha/styles/colors.dart';
-import 'package:netmasha/widgets/LikedContainer.dart';
+import 'package:netmasha/widgets/EventsContainer.dart';
 
 class FavoritePage extends StatelessWidget {
   const FavoritePage({super.key});
@@ -31,13 +31,14 @@ class FavoritePage extends StatelessWidget {
       ),
       body: ListView(
         shrinkWrap: true,
-        padding: const EdgeInsets.symmetric(horizontal: 25),
         children: const [
-          LikedContainer(
-              image: "assets/amazing-young-cowgirl-sitting-horse-outdoors.jpg",
-              title: 'ركوب الخيل ',
-              description:
-                  'تجربة فريدة لركوب الخيل مع العائلة في اسطبل خاص يمنحك تجربة متميزة'),
+          EventsContainer(
+            image: "assets/amazing-young-cowgirl-sitting-horse-outdoors.jpg",
+            title: 'ركوب الخيل ',
+            description:
+                'تجربة فريدة لركوب الخيل مع العائلة في اسطبل خاص يمنحك تجربة متميزة',
+            isLike: true,
+          ),
         ],
       ),
     );

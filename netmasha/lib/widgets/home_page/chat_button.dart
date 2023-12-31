@@ -11,17 +11,13 @@ class Chat extends StatelessWidget {
     return Row(
       children: [
         IconButton(
-          onPressed: () {
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => const MessagesScreen()));
-          },
-          icon: const Icon(
-            Icons.chat_outlined,
-            color: Colors.white,
-          ),
-        ),
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const MessagesScreen()));
+            },
+            icon: Image.asset("assets/fluent_people-chat-20-regular.png")),
         const SizedBox(
           width: 15,
         ),

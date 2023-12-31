@@ -1,6 +1,9 @@
-  import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 
-List<Widget> imageSliders =
-      ["assets/v1.png", "assets/v1.png", "assets/v1.png"].map((url) {
-    return Image.asset(url);
-  }).toList();
+List<Widget> imageSliders = [
+  "assets/ppp.png",
+  "assets/Group 632606.png",
+  "assets/iiiiii.png"
+].map((url) {
+  return Image.asset(url);
+}).toList();

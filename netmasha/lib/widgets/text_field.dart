@@ -19,33 +19,49 @@ class CustomTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      title: Text(lableText),
-      subtitle: TextFormField(
-        maxLines: isDescription ? 5 : 1,
-        obscureText: isPassword,
-        controller: controller,
-        decoration: InputDecoration(
-            border: const OutlineInputBorder(
-              borderRadius: BorderRadius.all(Radius.circular(10)),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            lableText,
+            style: const TextStyle(fontWeight: FontWeight.w500, fontSize: 14),
+          ),
+          const SizedBox(
+            height: 8,
+          ),
+          SizedBox(
+            child: TextFormField(
+              maxLines: isDescription ? 5 : 1,
+              obscureText: isPassword,
+              controller: controller,
+              decoration: InputDecoration(
+                  border: const OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(10)),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: const BorderRadius.all(Radius.circular(10)),
+                    borderSide: BorderSide(
+                      color: stroke,
+                      width: .5,
+                    ),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: const BorderRadius.all(Radius.circular(10)),
+                    borderSide: BorderSide(
+                      color: purple,
+                      width: .75,
+                    ),
+                  ),
+                  hintText: hintText,
+                  hintStyle: const TextStyle(
+                      color: Color.fromARGB(195, 158, 158, 158)),
+                  filled: true,
+                  fillColor: const Color(0xffF9F9F9)),
             ),
-            enabledBorder: OutlineInputBorder(
-              borderRadius: const BorderRadius.all(Radius.circular(10)),
-              borderSide: BorderSide(
-                color: stroke,
-                width: 1.0,
-              ),
-            ),
-            focusedBorder: OutlineInputBorder(
-              borderRadius: const BorderRadius.all(Radius.circular(10)),
-              borderSide: BorderSide(
-                color: purple,
-                width: 1.0,
-              ),
-            ),
-            hintText: hintText,
-            filled: true,
-            fillColor: const Color(0xffF9F9F9)),
+          ),
+        ],
       ),
     );
   }
@@ -83,14 +99,14 @@ class OtpTextField extends StatelessWidget {
                 borderRadius: const BorderRadius.all(Radius.circular(10)),
                 borderSide: BorderSide(
                   color: stroke,
-                  width: 1.0,
+                  width: .5,
                 ),
               ),
               focusedBorder: OutlineInputBorder(
                 borderRadius: const BorderRadius.all(Radius.circular(10)),
                 borderSide: BorderSide(
                   color: purple,
-                  width: 1.0,
+                  width: .5,
                 ),
               ),
               filled: true,

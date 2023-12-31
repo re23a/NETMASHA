@@ -20,7 +20,7 @@ class ProviderContainer extends StatelessWidget {
             borderRadius: BorderRadius.circular(15),
             boxShadow: const [
               BoxShadow(
-                color: Color.fromARGB(157, 158, 158, 158),
+                color: Color.fromARGB(96, 158, 158, 158),
                 blurRadius: 4,
                 offset: Offset(4, 8),
               ),
@@ -39,7 +39,6 @@ class ProviderContainer extends StatelessWidget {
               ),
             ),
             Image.asset("assets/Sunset-rafiki 1.png"),
-            const Icon(Icons.arrow_forward_ios_sharp),
           ]),
         ),
       ),
