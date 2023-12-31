@@ -2,9 +2,7 @@
     <application
         android:label="netmasha"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher"
-        <meta-data android:name="com.google.android.geo.API_KEY"
-               android:value="AIzaSyAhK5DmT476ng1xA6whNz5y_JIDJD4ccUE"/>>
+        android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
             android:exported="true"

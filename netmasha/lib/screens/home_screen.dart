@@ -6,6 +6,7 @@ import 'package:netmasha/widgets/home_page/advertisements_oard.dart';
 import 'package:netmasha/widgets/home_page/chat_button.dart';
 import 'package:netmasha/widgets/home_page/logo.dart';
 import 'package:netmasha/widgets/home_page/organizations.dart';
+
 import 'package:netmasha/widgets/home_page/title_widget.dart';
 import 'package:netmasha/widgets/home_page/user_name_widget.dart';
 
@@ -43,7 +44,7 @@ class HomeScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const TitleWidget(txt: 'ابرز الأنشطة'),
-                    Activities(experience: ExperienceModel(),),
+                    Activities(experience: ExperienceModel()),
                     const TitleWidget(txt: 'ابرز الجهات'),
                     const Organizations()
                   ],

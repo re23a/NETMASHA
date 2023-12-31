@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:netmasha/styles/colors.dart';
 import 'package:netmasha/widgets/ActivityLocation.dart';
-import 'package:netmasha/widgets/location_widget.dart';
 
 class LocationScreen extends StatelessWidget {
   const LocationScreen({super.key});
@@ -43,7 +42,6 @@ class LocationScreen extends StatelessWidget {
                 decoration: BoxDecoration(
                     color: lightPurple,
                     borderRadius: BorderRadius.circular(15)),
-                child: const LocationWidget(latitude: 100, longitude: 100),
               ),
             ),
           ),
