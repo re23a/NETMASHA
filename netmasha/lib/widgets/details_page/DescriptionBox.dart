@@ -53,7 +53,7 @@ class DescriptionBox extends StatelessWidget {
                     decoration: ShapeDecoration(
                       color: lightPurple,
                       shape: RoundedRectangleBorder(
-                        side: BorderSide(width: 0.87, color: purple),
+                        side: BorderSide(width: 1.5, color: green),
                         borderRadius: BorderRadius.circular(8.06),
                       ),
                     ),
@@ -92,7 +92,7 @@ class DescriptionBox extends StatelessWidget {
                     decoration: ShapeDecoration(
                       color: lightPurple,
                       shape: RoundedRectangleBorder(
-                        side: BorderSide(width: 0.87, color: purple),
+                        side: BorderSide(width: 1.5, color: green),
                         borderRadius: BorderRadius.circular(8.06),
                       ),
                     ),
