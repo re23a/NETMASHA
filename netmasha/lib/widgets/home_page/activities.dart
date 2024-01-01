@@ -6,9 +6,10 @@ import 'package:netmasha/widgets/buttons.dart';
 
 class Activities extends StatelessWidget {
   const Activities({
-    super.key, required this.experience,
+    super.key,
+    required this.experience,
   });
-final ExperienceModel experience;
+  final ExperienceModel experience;
   @override
   Widget build(BuildContext context) {
     return Row(

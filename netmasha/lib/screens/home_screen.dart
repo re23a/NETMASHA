@@ -72,13 +72,13 @@ class HomeScreen extends StatelessWidget {
                   child: AdvertisementsBoard(),
                 ),
               ]),
-              const Padding(
-                padding: EdgeInsets.only(right: 20),
+               Padding(
+                padding: const EdgeInsets.only(right: 20),
 
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const TitleWidget(txt: 'ابرز الأنشطة'),
+                     const TitleWidget(txt: 'ابرز الأنشطة'),
                     Activities(experience: ExperienceModel()),
                     const TitleWidget(txt: 'ابرز الجهات'),
                     const Organizations()
