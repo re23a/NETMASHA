@@ -78,7 +78,7 @@ class ProfileScreen extends StatelessWidget {
                                 builder: (context) => EditProfilePage()));
                       },
                       icon: Icon(
-                        Icons.settings,
+                        Icons.edit_note_rounded,
                         color: bg,
                         size: 30,
                       )))

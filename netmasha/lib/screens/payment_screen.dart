@@ -19,9 +19,9 @@ class PaymentScreen extends StatefulWidget {
 }
 
 class _PaymentScreenState extends State<PaymentScreen> {
+  String? type;
   @override
   Widget build(BuildContext context) {
-    String? type;
     return Scaffold(
       backgroundColor: bg,
       appBar: AppBar(
@@ -73,7 +73,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
           ],
         ),
       ),
-      body: Column(
+      body: ListView(
         children: [
           EasyDateTimeLine(
             initialDate: DateTime.now(),
@@ -328,7 +328,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                             title: const Text('Apple pay'),
                             trailing: const Icon(LineAwesome.cc_apple_pay),
                             leading: Radio(
-                              value: 1,
+                              value: 'Apple pay',
                               groupValue: type,
                               onChanged: (value) {
                                 setState(() {
@@ -341,7 +341,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                             title: const Text('Visa/Mada'),
                             trailing: const Icon(LineAwesome.cc_visa),
                             leading: Radio(
-                              value: 2,
+                              value: 'Visa/Mada',
                               groupValue: type,
                               onChanged: (value) {
                                 setState(() {
@@ -354,7 +354,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                             title: const Text('الدفع عند الوصول'),
                             trailing: const Icon(Icons.wallet),
                             leading: Radio(
-                              value: 3,
+                              value: 'الدفع عند الوصول',
                               groupValue: type,
                               onChanged: (value) {
                                 setState(() {

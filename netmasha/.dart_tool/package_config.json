@@ -80,6 +80,12 @@
       "languageVersion": "3.0"
     },
     {
+      "name": "floating_navbar",
+      "rootUri": "file:///C:/Users/zezoo/AppData/Local/Pub/Cache/hosted/pub.dev/floating_navbar-2.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "flutter",
       "rootUri": "file:///C:/flutter/flutter_windows_3.0.1-stable/flutter/packages/flutter",
       "packageUri": "lib/",
@@ -416,7 +422,7 @@
       "languageVersion": "3.2"
     }
   ],
-  "generated": "2023-12-31T16:43:38.181676Z",
+  "generated": "2024-01-01T10:50:00.892095Z",
   "generator": "pub",
   "generatorVersion": "3.2.0"
 }

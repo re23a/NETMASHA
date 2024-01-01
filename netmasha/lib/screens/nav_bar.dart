@@ -36,8 +36,8 @@ class _NavBarState extends State<NavBar> {
           indexSelected = screenIndex;
           setState(() {});
         },
-        selectedLabelStyle: TextStyle(fontSize: 10),
-        items: [
+        selectedLabelStyle: const TextStyle(fontSize: 10),
+        items: const [
           BottomNavigationBarItem(
               icon: Icon(
                 Icons.home,
@@ -45,13 +45,13 @@ class _NavBarState extends State<NavBar> {
               label: "الرئيسية"),
           BottomNavigationBarItem(
               icon: Icon(
-                Icons.location_on_outlined,
+                Icons.explore,
               ),
               label: "اكتشف"),
           BottomNavigationBarItem(
-              icon: Icon(Icons.padding_outlined), label: "احسبها"),
+              icon: Icon(Icons.table_chart), label: "احسبها"),
           BottomNavigationBarItem(
-              icon: Icon(Icons.folder_copy_outlined), label: "حجوزاتي"),
+              icon: Icon(Icons.folder_copy), label: "حجوزاتي"),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: "حسابي"),
         ],
       ),
