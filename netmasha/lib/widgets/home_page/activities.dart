@@ -25,14 +25,15 @@ final ExperienceModel experience;
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.symmetric(vertical: 10),
                 child: Container(
                   clipBehavior: Clip.antiAlias,
                   height: 160,
+                  width: 260,
                   decoration: ShapeDecoration(
                     color: Colors.grey,
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15),
+                      borderRadius: BorderRadius.circular(5),
                     ),
                   ),
                   child: Image.asset(
@@ -42,7 +43,7 @@ final ExperienceModel experience;
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(8),
+                padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -51,9 +52,12 @@ final ExperienceModel experience;
                       'ركوب الخيل ',
                       style: TextStyle(
                         color: black,
-                        fontSize: 15,
-                        fontWeight: FontWeight.w500,
+                        fontSize: 18,
+                        fontWeight: FontWeight.w600,
                       ),
+                    ),
+                    const SizedBox(
+                      height: 5,
                     ),
                     Text(
                       'تجربة فريدة لركوب الخيل مع العائلة في اسطبل خاص يمنحك تجربة متميزة',
