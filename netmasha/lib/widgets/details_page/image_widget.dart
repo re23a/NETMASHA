@@ -19,7 +19,7 @@ class ActivityImage extends StatelessWidget {
           ),
         ),
       ),
-      child: Image.asset(
+      child: Image.network(
        urlImage,
         fit: BoxFit.cover,
       ),

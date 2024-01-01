@@ -54,7 +54,7 @@ class Auth extends Apis {
       );
       return response;
     } catch (error) {
-      print('Error during login: $error');
+      print('Error during ConvertToProvider: $error');
       throw error;
     }
   }

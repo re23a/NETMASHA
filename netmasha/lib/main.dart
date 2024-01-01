@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:netmasha/blocs/auth_bloc/auth_bloc.dart';
 import 'package:netmasha/blocs/onbaording_bloc/onbaording_bloc.dart';
+import 'package:netmasha/blocs/table_bloc/table_bloc.dart';
 import 'package:netmasha/screens/nav_bar.dart';
 import 'package:netmasha/screens/splash_screen.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -32,6 +33,8 @@ class MainApp extends StatelessWidget {
           BlocProvider<OnbaordingBloc>(
               create: (BuildContext context) => OnbaordingBloc()),
           BlocProvider<AuthBloc>(create: (BuildContext context) => AuthBloc()),
+          BlocProvider<TableBloc>(
+              create: (BuildContext context) => TableBloc()),
           // Add other BlocProviders if needed
         ],
         child: MaterialApp(

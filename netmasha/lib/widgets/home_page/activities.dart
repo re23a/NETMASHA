@@ -6,9 +6,10 @@ import 'package:netmasha/widgets/buttons.dart';
 
 class Activities extends StatelessWidget {
   const Activities({
-    super.key, required this.experience,
+    super.key,
+    required this.experience,
   });
-final ExperienceModel experience;
+  final ExperienceModel experience;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -35,8 +36,8 @@ final ExperienceModel experience;
                       borderRadius: BorderRadius.circular(15),
                     ),
                   ),
-                  child: Image.asset(
-                    "assets/amazing-young-cowgirl-sitting-horse-outdoors.jpg",
+                  child: Image.network(
+                    experience.photoUrl.toString(),
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -48,7 +49,7 @@ final ExperienceModel experience;
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'ركوب الخيل ',
+                      experience.title.toString(),
                       style: TextStyle(
                         color: black,
                         fontSize: 15,
@@ -56,7 +57,7 @@ final ExperienceModel experience;
                       ),
                     ),
                     Text(
-                      'تجربة فريدة لركوب الخيل مع العائلة في اسطبل خاص يمنحك تجربة متميزة',
+                      experience.description.toString(),
                       style: TextStyle(
                         color: black,
                         fontSize: 14,
@@ -75,7 +76,9 @@ final ExperienceModel experience;
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => DetailsScreen()));
+                                    builder: (context) => DetailsScreen(
+                                          experience: experience,
+                                        )));
                           },
                           isBigButten: false,
                           inHomePage: true,

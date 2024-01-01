@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:netmasha/screens/Profile/edit_proflie.dart';
 import 'package:netmasha/screens/Profile/favorite_page.dart';
 import 'package:netmasha/screens/Profile/provider_info.dart';
+import 'package:netmasha/screens/splash_screen.dart';
 import 'package:netmasha/styles/colors.dart';
 import 'package:netmasha/widgets/buttons.dart';
 import 'package:netmasha/widgets/profile_page/profile_containers.dart';
 import 'package:netmasha/widgets/profile_page/provider_container.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -205,7 +207,24 @@ class ProfileScreen extends StatelessWidget {
                                           const SizedBox(width: 40),
                                           Button(
                                             txt: 'نعم',
-                                            onTap: () {},
+                                            onTap: () async {
+                                              final SharedPreferences prefs =
+                                                  await SharedPreferences
+                                                      .getInstance();
+                                              String token =
+                                                  prefs.getString("token") ??
+                                                      "";
+                                              if (token.isNotEmpty) {
+                                                token = "";
+                                              }
+                                              // ignore: use_build_context_synchronously
+                                              Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        const SplashScreen()),
+                                              );
+                                            },
                                             isBigButten: false,
                                           ),
                                         ],
