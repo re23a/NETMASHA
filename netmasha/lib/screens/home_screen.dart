@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:netmasha/models/experience_model.dart';
+import 'package:netmasha/api/experience.dart';
 import 'package:netmasha/styles/colors.dart';
 import 'package:netmasha/widgets/home_page/activities.dart';
 import 'package:netmasha/widgets/home_page/advertisements_oard.dart';
@@ -16,15 +16,12 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: bg,
-
       body: SingleChildScrollView(
-
         scrollDirection: Axis.vertical,
         child: Padding(
           padding: const EdgeInsets.only(bottom: 20),
           child: Column(
             children: [
-
               Stack(children: [
                 Container(
                   width: MediaQuery.of(context).size.width,
@@ -72,14 +69,35 @@ class HomeScreen extends StatelessWidget {
                   child: AdvertisementsBoard(),
                 ),
               ]),
-               Padding(
-                padding: const EdgeInsets.only(right: 20),
-
+              Padding(
+                padding: EdgeInsets.only(right: 20),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                     const TitleWidget(txt: 'ابرز الأنشطة'),
-                    Activities(experience: ExperienceModel()),
+                    const TitleWidget(txt: 'ابرز الأنشطة'),
+                    SizedBox(
+                      height: 320,
+                      child: FutureBuilder(
+                          future: Experience().getView(),
+                          builder: (context, snapshot) {
+                            if (snapshot.hasData) {
+                              return ListView.separated(
+                                  shrinkWrap: true,
+                                  scrollDirection: Axis.horizontal,
+                                  itemCount: 3,
+                                  itemBuilder: (context, index) {
+                                    return Activities(
+                                        experience: snapshot.data![index]);
+                                  },
+                                  separatorBuilder: (context, index) {
+                                    return const SizedBox(width: 16);
+                                  });
+                            }
+                            return Center(
+                                child:
+                                    CircularProgressIndicator(color: purple));
+                          }),
+                    ),
                     const TitleWidget(txt: 'ابرز الجهات'),
                     const Organizations()
                   ],

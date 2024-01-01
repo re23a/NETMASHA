@@ -3,24 +3,24 @@ import 'package:netmasha/blocs/table_bloc/table_event.dart';
 import 'package:netmasha/blocs/table_bloc/teble_state.dart';
 
 class TableBloc extends Bloc<TableEvent, TableState> {
-  TableBloc() : super(InitialState(number: 0)) {
+  TableBloc() : super(InitialState(adult: 0, child: 0)) {
     on<IncreaseAdult>((event, emit) {
-      emit(AdultState(number: event.number + 1));
+      emit(AdultState(adult: event.adult + 1, child: event.child));
     });
 
     on<DecreaseAdult>((event, emit) {
-      if (event.number > 0) {
-        emit(AdultState(number: event.number - 1));
+      if (event.adult > 0) {
+        emit(AdultState(adult: event.adult - 1, child: event.child));
       }
     });
 
     on<IncreaseChild>((event, emit) {
-      emit(ChildState(number: event.number + 1));
+      emit(ChildState(child: event.child + 1, adult: event.adult));
     });
 
     on<DecreaseChild>((event, emit) {
-      if (event.number > 0) {
-        emit(ChildState(number: event.number - 1));
+      if (event.child > 0) {
+        emit(ChildState(child: event.child - 1, adult: event.adult));
       }
     });
   }

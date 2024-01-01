@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:netmasha/models/experience_model.dart';
 import 'package:netmasha/screens/chat_screen.dart';
 import 'package:netmasha/screens/payment_screen.dart';
 import 'package:netmasha/styles/colors.dart';
@@ -9,7 +10,8 @@ import 'package:netmasha/widgets/details_page/InfoBox.dart';
 import 'package:netmasha/widgets/details_page/image_widget.dart';
 
 class DetailsScreen extends StatelessWidget {
-  const DetailsScreen({super.key});
+  const DetailsScreen({super.key, required this.experience});
+  final ExperienceModel experience;
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +30,9 @@ class DetailsScreen extends StatelessWidget {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const PaymentScreen()));
+                          builder: (context) => PaymentScreen(
+                                experience: experience,
+                              )));
                 },
                 isBigButten: true),
           ],
@@ -38,21 +42,19 @@ class DetailsScreen extends StatelessWidget {
         scrollDirection: Axis.vertical,
         child: Column(
           children: [
-            const Stack(
+            Stack(
               children: [
                 ActivityImage(
-                  urlImage:
-                      "assets/amazing-young-cowgirl-sitting-horse-outdoors.jpg",
+                  urlImage: experience.photoUrl.toString(),
                 ),
-                ArrowBack()
+                const ArrowBack()
               ],
             ),
-            const DescriptionBox(
-              title: "ركوب الخيل",
-              description:
-                  'تجربة فريدة لركوب الخيل مع العائلة في اسطبل خاص يمنحك تجربة متميزة\nتجربة فريدة لركوب الخيل مع العائلة في اسطبل خاص يمنحك تجربة متميزةتجربة فريدة لركوب الخيل مع العائلة في اسطبل خاص يمنحك تجربة متميزةتجربة فريدة لركوب الخيل مع العائلة في اسطبل خاص يمنحك تجربة متميزة',
-              adults: '400 ر.س',
-              children: '400 ر.س',
+            DescriptionBox(
+              title: experience.title.toString(),
+              description: experience.description.toString(),
+              adults: '${experience.adultPrice} ر.س',
+              children: '${experience.childPrice} ر.س',
             ),
             InfoBox(
               chat: () {

@@ -1,16 +1,17 @@
 abstract class TableState {
-  final int number;
-  TableState({required this.number});
+  final int adult;
+  final int child;
+  TableState({required this.adult, required this.child});
 }
 
 class InitialState extends TableState {
-  InitialState({required super.number});
+  InitialState({required super.adult, required super.child});
 }
 
 class AdultState extends TableState {
-  AdultState({required super.number});
+  AdultState({required super.adult, required super.child});
 }
 
 class ChildState extends TableState {
-  ChildState({required super.number});
+  ChildState({required super.adult, required super.child});
 }

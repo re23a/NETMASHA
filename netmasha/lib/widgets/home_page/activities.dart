@@ -37,8 +37,8 @@ class Activities extends StatelessWidget {
                       borderRadius: BorderRadius.circular(5),
                     ),
                   ),
-                  child: Image.asset(
-                    "assets/amazing-young-cowgirl-sitting-horse-outdoors.jpg",
+                  child: Image.network(
+                    experience.photoUrl.toString(),
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -50,7 +50,7 @@ class Activities extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'ركوب الخيل ',
+                      experience.title.toString(),
                       style: TextStyle(
                         color: black,
                         fontSize: 18,
@@ -61,7 +61,7 @@ class Activities extends StatelessWidget {
                       height: 5,
                     ),
                     Text(
-                      'تجربة فريدة لركوب الخيل مع العائلة في اسطبل خاص يمنحك تجربة متميزة',
+                      experience.description.toString(),
                       style: TextStyle(
                         color: black,
                         fontSize: 14,
@@ -80,7 +80,9 @@ class Activities extends StatelessWidget {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => DetailsScreen()));
+                                    builder: (context) => DetailsScreen(
+                                          experience: experience,
+                                        )));
                           },
                           isBigButten: false,
                           inHomePage: true,

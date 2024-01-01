@@ -1,13 +1,18 @@
 import 'package:easy_date_timeline/easy_date_timeline.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:netmasha/blocs/table_bloc/table_bloc.dart';
+import 'package:netmasha/blocs/table_bloc/table_event.dart';
+import 'package:netmasha/blocs/table_bloc/teble_state.dart';
+import 'package:netmasha/models/experience_model.dart';
 import 'package:netmasha/screens/nav_bar.dart';
 import 'package:netmasha/styles/colors.dart';
-import 'package:netmasha/widgets/Reservations/countre.dart';
 import 'package:netmasha/widgets/buttons.dart';
 import 'package:icons_plus/icons_plus.dart';
 
 class PaymentScreen extends StatefulWidget {
-  const PaymentScreen({super.key});
+  const PaymentScreen({super.key, required this.experience});
+  final ExperienceModel experience;
 
   @override
   State<PaymentScreen> createState() => _PaymentScreenState();
@@ -32,34 +37,39 @@ class _PaymentScreenState extends State<PaymentScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Button(
-                txt: 'ادفع',
-                onTap: () {
-                  showDialog(
-                      context: context,
-                      builder: (BuildContext context) {
-                        return SimpleDialog(
-                          backgroundColor: bg,
-                          title: Image.asset(
-                              "assets/Animation - 1703754414942-2.gif"),
-                          children: [
-                            SimpleDialogOption(
-                                child: Button(
-                                    txt: 'العودة للصفحة الرئيسية',
-                                    onTap: () {
-                                      Navigator.pushAndRemoveUntil(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) => NavBar()),
-                                        (route) => false,
-                                      );
-                                    },
-                                    isBigButten: true))
-                          ],
-                        );
-                      });
-                },
-                isBigButten: true),
+            BlocBuilder<TableBloc, TableState>(builder: (context, state) {
+              return Button(
+                  txt: 'ادفع',
+                  onTap: () {
+                    context
+                        .read<TableBloc>()
+                        .add(IncreaseAdult(adult: -1, child: 0));
+                    showDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return SimpleDialog(
+                            backgroundColor: bg,
+                            title: Image.asset(
+                                "assets/Animation - 1703754414942-2.gif"),
+                            children: [
+                              SimpleDialogOption(
+                                  child: Button(
+                                      txt: 'العودة للصفحة الرئيسية',
+                                      onTap: () {
+                                        Navigator.pushAndRemoveUntil(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) => NavBar()),
+                                          (route) => false,
+                                        );
+                                      },
+                                      isBigButten: true))
+                            ],
+                          );
+                        });
+                  },
+                  isBigButten: true);
+            }),
           ],
         ),
       ),
@@ -116,19 +126,35 @@ class _PaymentScreenState extends State<PaymentScreen> {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             Container(
-                              width: 35,
-                              height: 35,
-                              decoration: ShapeDecoration(
-                                color: const Color(0xFFF2EDFF),
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(6)),
-                              ),
-                              child: const Center(child: Icon(Icons.add)),
-                            ),
+                                width: 35,
+                                height: 35,
+                                decoration: ShapeDecoration(
+                                  color: const Color(0xFFF2EDFF),
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(6)),
+                                ),
+                                child: Center(
+                                    child: BlocBuilder<TableBloc, TableState>(
+                                  builder: (context, state) {
+                                    return IconButton(
+                                      icon: const Icon(Icons.add),
+                                      onPressed: () {
+                                        context.read<TableBloc>().add(
+                                            IncreaseAdult(
+                                                adult: state.adult,
+                                                child: state.child));
+                                      },
+                                    );
+                                  },
+                                ))),
                             const SizedBox(
                               width: 8,
                             ),
-                            const Text("0"),
+                            BlocBuilder<TableBloc, TableState>(
+                              builder: (context, state) {
+                                return Text(state.adult.toString());
+                              },
+                            ),
                             const SizedBox(
                               width: 8,
                             ),
@@ -140,8 +166,19 @@ class _PaymentScreenState extends State<PaymentScreen> {
                                 shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(6)),
                               ),
-                              child: const Center(
-                                child: Icon(Icons.remove),
+                              child: Center(
+                                child: BlocBuilder<TableBloc, TableState>(
+                                    builder: (context, state) {
+                                  return IconButton(
+                                    icon: const Icon(Icons.remove),
+                                    onPressed: () {
+                                      context.read<TableBloc>().add(
+                                          DecreaseAdult(
+                                              adult: state.adult,
+                                              child: state.child));
+                                    },
+                                  );
+                                }),
                               ),
                             )
                           ],
@@ -165,21 +202,61 @@ class _PaymentScreenState extends State<PaymentScreen> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            CounterButton(
-                              isIncrease: true,
-                              onTap: () {},
+                            Container(
+                                width: 35,
+                                height: 35,
+                                decoration: ShapeDecoration(
+                                  color: const Color(0xFFF2EDFF),
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(6)),
+                                ),
+                                child: Center(
+                                    child: BlocBuilder<TableBloc, TableState>(
+                                  builder: (context, state) {
+                                    return IconButton(
+                                      icon: const Icon(Icons.add),
+                                      onPressed: () {
+                                        context.read<TableBloc>().add(
+                                            IncreaseChild(
+                                                adult: state.adult,
+                                                child: state.child));
+                                      },
+                                    );
+                                  },
+                                ))),
+                            const SizedBox(
+                              width: 8,
+                            ),
+                            BlocBuilder<TableBloc, TableState>(
+                              builder: (context, state) {
+                                return Text(state.child.toString());
+                              },
                             ),
                             const SizedBox(
                               width: 8,
                             ),
-                            const Text("0"),
-                            const SizedBox(
-                              width: 8,
-                            ),
-                            CounterButton(
-                              isIncrease: false,
-                              onTap: () {},
-                            ),
+                            Container(
+                                width: 35,
+                                height: 35,
+                                decoration: ShapeDecoration(
+                                  color: const Color(0xFFF2EDFF),
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(6)),
+                                ),
+                                child: Center(
+                                    child: BlocBuilder<TableBloc, TableState>(
+                                  builder: (context, state) {
+                                    return IconButton(
+                                      icon: const Icon(Icons.remove),
+                                      onPressed: () {
+                                        context.read<TableBloc>().add(
+                                            DecreaseChild(
+                                                adult: state.adult,
+                                                child: state.child));
+                                      },
+                                    );
+                                  },
+                                ))),
                           ],
                         )
                       ],
@@ -204,14 +281,17 @@ class _PaymentScreenState extends State<PaymentScreen> {
                         fontWeight: FontWeight.w600,
                       ),
                     ),
-                    Text(
-                      '600 ر.س',
-                      style: TextStyle(
-                        color: black,
-                        fontSize: 18,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    )
+                    BlocBuilder<TableBloc, TableState>(
+                        builder: (context, state) {
+                      return Text(
+                        '${state.adult * widget.experience.adultPrice! + state.child * widget.experience.childPrice!} ر.س',
+                        style: TextStyle(
+                          color: black,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      );
+                    })
                   ],
                 ),
                 const SizedBox(

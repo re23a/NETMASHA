@@ -1,21 +1,22 @@
 abstract class TableEvent {
-  final int number;
+  final int adult;
+  final int child;
 
-  TableEvent({required this.number});
+  TableEvent({required this.adult, required this.child});
 }
 
 class IncreaseAdult extends TableEvent {
-  IncreaseAdult({required super.number});
+  IncreaseAdult({required super.adult, required super.child});
 }
 
 class IncreaseChild extends TableEvent {
-  IncreaseChild({required super.number});
+  IncreaseChild({required super.adult, required super.child});
 }
 
 class DecreaseAdult extends TableEvent {
-  DecreaseAdult({required super.number});
+  DecreaseAdult({required super.adult, required super.child});
 }
 
 class DecreaseChild extends TableEvent {
-  DecreaseChild({required super.number});
+  DecreaseChild({required super.adult, required super.child});
 }
