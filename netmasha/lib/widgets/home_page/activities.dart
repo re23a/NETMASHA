@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:netmasha/models/experience_model.dart';
 import 'package:netmasha/screens/details_screen.dart';
 import 'package:netmasha/styles/colors.dart';
 import 'package:netmasha/widgets/buttons.dart';
 
 class Activities extends StatelessWidget {
   const Activities({
-    super.key,
+    super.key, required this.experience,
   });
-
+final ExperienceModel experience;
   @override
   Widget build(BuildContext context) {
     return Row(

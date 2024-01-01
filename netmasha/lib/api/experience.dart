@@ -1,5 +1,8 @@
+import 'dart:convert';
+
 import 'package:http/http.dart' as http;
 import 'package:netmasha/api/api_all_methods.dart';
+import 'package:netmasha/models/experience_model.dart';
 
 class Experience extends Apis {
   final String _add = '/experience/add';
@@ -18,13 +21,18 @@ class Experience extends Apis {
     }
   }
 
-  Future<http.Response> getView(String token) async {
+  Future<List<ExperienceModel>> getView(String token) async {
     try {
       final http.Response response = await getMethod(
         endpoint: _view,
         token: token,
       );
-      return response;
+      List<ExperienceModel> experience = [];
+      final body = jsonDecode(response.body)['msg'];
+      for (var element in body) {
+        experience.add(ExperienceModel.fromJson(element));
+      }
+      return experience;
     } catch (error) {
       print('Error during Verification: $error');
       throw error;

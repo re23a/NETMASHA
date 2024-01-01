@@ -1,4 +1,4 @@
-class Experience {
+class ExperienceModel {
   int? id;
   int? serviceProviderId;
   String? photoUrl;
@@ -9,7 +9,7 @@ class Experience {
   int? latitude;
   int? longitude;
 
-  Experience(
+  ExperienceModel(
       {this.id,
       this.serviceProviderId,
       this.photoUrl,
@@ -20,7 +20,7 @@ class Experience {
       this.latitude,
       this.longitude});
 
-  Experience.fromJson(Map<String, dynamic> json) {
+  ExperienceModel.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     serviceProviderId = json['service_provider_id'];
     photoUrl = json['photo_url'];
