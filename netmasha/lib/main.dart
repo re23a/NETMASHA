@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:netmasha/blocs/auth_bloc/auth_bloc.dart';
+import 'package:netmasha/blocs/date_bloc.dart';
 import 'package:netmasha/blocs/onbaording_bloc/onbaording_bloc.dart';
 import 'package:netmasha/blocs/table_bloc/table_bloc.dart';
 import 'package:netmasha/screens/nav_bar.dart';
@@ -35,6 +36,7 @@ class MainApp extends StatelessWidget {
           BlocProvider<AuthBloc>(create: (BuildContext context) => AuthBloc()),
           BlocProvider<TableBloc>(
               create: (BuildContext context) => TableBloc()),
+          BlocProvider<DateBloc>(create: (BuildContext context) => DateBloc()),
           // Add other BlocProviders if needed
         ],
         child: MaterialApp(
