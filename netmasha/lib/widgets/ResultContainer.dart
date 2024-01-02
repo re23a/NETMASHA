@@ -1,17 +1,11 @@
-
 import 'package:flutter/material.dart';
+import 'package:netmasha/models/experience_model.dart';
 import 'package:netmasha/styles/colors.dart';
 
 class ResultContainer extends StatelessWidget {
-  const ResultContainer({
-    super.key,
-    required this.title,
-    required this.price,
-    required this.image,
-  });
-  final String title;
-  final String price;
-  final String image;
+  const ResultContainer({super.key, required this.experience});
+  final ExperienceModel experience;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -32,8 +26,8 @@ class ResultContainer extends StatelessWidget {
               padding: const EdgeInsets.all(10.0),
               height: 150,
               width: MediaQuery.of(context).size.width,
-              child: Image.asset(
-                image,
+              child: Image.network(
+                experience.photoUrl.toString(),
                 fit: BoxFit.cover,
               ),
             ),
@@ -43,7 +37,7 @@ class ResultContainer extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    title,
+                    experience.title.toString(),
                     style: TextStyle(
                       color: black,
                       fontSize: 20,
@@ -51,7 +45,7 @@ class ResultContainer extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    price,
+                    "${experience.adultPrice.toString()} ر.س",
                     style: const TextStyle(
                       color: Colors.green,
                       fontSize: 20,

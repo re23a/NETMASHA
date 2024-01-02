@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:netmasha/api/experience.dart';
 import 'package:netmasha/styles/colors.dart';
 import 'package:netmasha/widgets/ResultContainer.dart';
 
@@ -29,19 +30,25 @@ class ResultScreen extends StatelessWidget {
           ),
         ),
       ),
-      body: const Center(
+      body: Center(
         child: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              ResultContainer(
-                title: 'زيارة اسطبل',
-                price: '200 ر.س',
-                image:
-                    "assets/amazing-young-cowgirl-sitting-horse-outdoors.jpg",
-              ),
-            ],
-          ),
+          child: FutureBuilder(
+              future: Experience().getView(),
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  return ListView.separated(
+                      shrinkWrap: true,
+                      itemCount: snapshot.data!.length,
+                      itemBuilder: (context, index) {
+                        return ResultContainer(
+                            experience: snapshot.data![index]);
+                      },
+                      separatorBuilder: (context, index) {
+                        return const SizedBox(height: 24);
+                      });
+                }
+                return Center(child: CircularProgressIndicator(color: purple));
+              }),
         ),
       ),
     );

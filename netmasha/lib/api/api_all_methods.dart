@@ -11,6 +11,7 @@ class Apis {
   }) async {
     var url = Uri.https(_urlApi, endpoint);
     var headers = token != null ? {'Authorization': 'Bearer $token'} : null;
+    print(token);
     var response = await http.post(
       url,
       body: json.encode(body),

@@ -83,7 +83,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           emit(LoadingState(isLoading: false));
           emit(AuthOTPSuccessState());
         } else {
-          emit(AuthOTPErrorState(errorMsg: "Wrong OTP $response"));
+          emit(AuthOTPErrorState(errorMsg: "Wrong OTP ${response.body}"));
           emit(LoadingState(isLoading: false));
         }
       }

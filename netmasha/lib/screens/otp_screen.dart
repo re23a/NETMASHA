@@ -72,7 +72,6 @@ class OtpScreen extends StatelessWidget {
               ),
               const SizedBox(height: 24),
               Row(
-                
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: List.generate(6, (index) {
                   return OtpTextField(controller: otpControllers[index]);
@@ -84,8 +83,10 @@ class OtpScreen extends StatelessWidget {
                 isBigButten: true,
                 onTap: () {
                   final otpCode = otpControllers.map((c) => c.text).join();
+                  String reversedOtpCode = otpCode.split('').reversed.join();
+                  print(reversedOtpCode);
                   context.read<AuthBloc>().add(OTPEvent(
-                      otpCode: otpCode,
+                      otpCode: reversedOtpCode,
                       email: userEmail,
                       type:
                           "type")); // Assuming type is necessary for your logic

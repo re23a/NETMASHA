@@ -1,6 +1,10 @@
 import 'package:easy_date_timeline/easy_date_timeline.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:netmasha/api/booking.dart';
+import 'package:netmasha/blocs/date_bloc.dart';
+import 'package:netmasha/blocs/date_event.dart';
+import 'package:netmasha/blocs/date_state.dart';
 import 'package:netmasha/blocs/table_bloc/table_bloc.dart';
 import 'package:netmasha/blocs/table_bloc/table_event.dart';
 import 'package:netmasha/blocs/table_bloc/teble_state.dart';
@@ -37,53 +41,73 @@ class _PaymentScreenState extends State<PaymentScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            BlocBuilder<TableBloc, TableState>(builder: (context, state) {
-              return Button(
-                  txt: 'ادفع',
-                  onTap: () {
-                    context
-                        .read<TableBloc>()
-                        .add(IncreaseAdult(adult: -1, child: 0));
-                    showDialog(
-                        context: context,
-                        builder: (BuildContext context) {
-                          return SimpleDialog(
-                            backgroundColor: bg,
-                            title: Image.asset(
-                                "assets/Animation - 1703754414942-2.gif"),
-                            children: [
-                              SimpleDialogOption(
-                                  child: Button(
-                                      txt: 'العودة للصفحة الرئيسية',
-                                      onTap: () {
-                                        Navigator.pushAndRemoveUntil(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) => NavBar()),
-                                          (route) => false,
-                                        );
-                                      },
-                                      isBigButten: true))
-                            ],
-                          );
+            BlocBuilder<TableBloc, TableState>(builder: (context, tableState) {
+              return BlocBuilder<DateBloc, DateState>(
+                builder: (context, dateState) {
+                  return Button(
+                      txt: 'ادفع',
+                      onTap: () async {
+                        await Booking().postAdd({
+                          "experience_id": widget.experience.id,
+                          "child_numbers": tableState.child,
+                          "adult_numbers": tableState.adult,
+                          "date": dateState.date
                         });
-                  },
-                  isBigButten: true);
+                        // ignore: use_build_context_synchronously
+                        context
+                            .read<TableBloc>()
+                            .add(IncreaseAdult(adult: -1, child: 0));
+                        // ignore: use_build_context_synchronously
+                        showDialog(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return SimpleDialog(
+                                backgroundColor: bg,
+                                title: Image.asset(
+                                    "assets/Animation - 1703754414942-2.gif"),
+                                children: [
+                                  SimpleDialogOption(
+                                      child: Button(
+                                          txt: 'العودة للصفحة الرئيسية',
+                                          onTap: () {
+                                            Navigator.pushAndRemoveUntil(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      NavBar()),
+                                              (route) => false,
+                                            );
+                                          },
+                                          isBigButten: true))
+                                ],
+                              );
+                            });
+                      },
+                      isBigButten: true);
+                },
+              );
             }),
           ],
         ),
       ),
       body: ListView(
         children: [
-          EasyDateTimeLine(
-            initialDate: DateTime.now(),
-            onDateChange: (selectedDate) {},
-            activeColor: green,
-            locale: 'ar',
-            dayProps: EasyDayProps(
-              todayHighlightStyle: TodayHighlightStyle.withBackground,
-              todayHighlightColor: lightGreen,
-            ),
+          BlocBuilder<DateBloc, DateState>(
+            builder: (context, state) {
+              return EasyDateTimeLine(
+                initialDate: DateTime.now(),
+                onDateChange: (selectedDate) {
+                  context.read<DateBloc>().add(
+                      ChangeBookingDateEvent(date: selectedDate.toString()));
+                },
+                activeColor: green,
+                locale: 'ar',
+                dayProps: EasyDayProps(
+                  todayHighlightStyle: TodayHighlightStyle.withBackground,
+                  todayHighlightColor: lightGreen,
+                ),
+              );
+            },
           ),
           const SizedBox(
             height: 12,

@@ -20,3 +20,4 @@ class DecreaseAdult extends TableEvent {
 class DecreaseChild extends TableEvent {
   DecreaseChild({required super.adult, required super.child});
 }
+
