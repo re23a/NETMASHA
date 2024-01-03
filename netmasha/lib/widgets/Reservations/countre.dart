@@ -10,14 +10,17 @@ class CounterButton extends StatelessWidget {
   final Function() onTap;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 35,
-      height: 35,
-      decoration: ShapeDecoration(
-        color: const Color(0xFFF2EDFF),
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
+    return InkWell(
+      onTap: onTap,
+      child: Container(
+        width: 35,
+        height: 35,
+        decoration: ShapeDecoration(
+          color: const Color(0xFFF2EDFF),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
+        ),
+        child: Center(child: isIncrease ? Icon(Icons.add) : Icon(Icons.remove)),
       ),
-      child: Center(child: isIncrease ? Icon(Icons.add) : Icon(Icons.remove)),
     );
   }
 }

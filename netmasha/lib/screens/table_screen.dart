@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:netmasha/blocs/table_bloc/table_bloc.dart';
+import 'package:netmasha/blocs/table_bloc/table_event.dart';
+import 'package:netmasha/blocs/table_bloc/teble_state.dart';
 import 'package:netmasha/screens/result_screen.dart';
 import 'package:netmasha/styles/colors.dart';
 import 'package:netmasha/widgets/Reservations/countre.dart';
@@ -88,20 +92,38 @@ class TableScreen extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        CounterButton(
-                          isIncrease: true,
-                          onTap: () {},
+                        BlocBuilder<TableBloc, TableState>(
+                          builder: (context, state) {
+                            return CounterButton(
+                              isIncrease: true,
+                              onTap: () {
+                                context.read<TableBloc>().add(IncreaseAdult(
+                                    adult: state.adult, child: state.child));
+                              },
+                            );
+                          },
                         ),
                         const SizedBox(
                           width: 8,
                         ),
-                        const Text("0"),
+                        BlocBuilder<TableBloc, TableState>(
+                          builder: (context, state) {
+                            return Text(state.adult.toString());
+                          },
+                        ),
                         const SizedBox(
                           width: 8,
                         ),
-                        CounterButton(
-                          isIncrease: false,
-                          onTap: () {},
+                        BlocBuilder<TableBloc, TableState>(
+                          builder: (context, state) {
+                            return CounterButton(
+                              isIncrease: false,
+                              onTap: () {
+                                context.read<TableBloc>().add(DecreaseAdult(
+                                    adult: state.adult, child: state.child));
+                              },
+                            );
+                          },
                         ),
                       ],
                     )
@@ -124,20 +146,38 @@ class TableScreen extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        CounterButton(
-                          isIncrease: true,
-                          onTap: () {},
+                        BlocBuilder<TableBloc, TableState>(
+                          builder: (context, state) {
+                            return CounterButton(
+                              isIncrease: true,
+                              onTap: () {
+                                context.read<TableBloc>().add(IncreaseChild(
+                                    adult: state.adult, child: state.child));
+                              },
+                            );
+                          },
                         ),
                         const SizedBox(
                           width: 8,
                         ),
-                        const Text("0"),
+                        BlocBuilder<TableBloc, TableState>(
+                          builder: (context, state) {
+                            return Text(state.child.toString());
+                          },
+                        ),
                         const SizedBox(
                           width: 8,
                         ),
-                        CounterButton(
-                          isIncrease: false,
-                          onTap: () {},
+                        BlocBuilder<TableBloc, TableState>(
+                          builder: (context, state) {
+                            return CounterButton(
+                              isIncrease: false,
+                              onTap: () {
+                                context.read<TableBloc>().add(DecreaseChild(
+                                    adult: state.adult, child: state.child));
+                              },
+                            );
+                          },
                         ),
                       ],
                     )
@@ -149,13 +189,23 @@ class TableScreen extends StatelessWidget {
           const SizedBox(
             height: 50,
           ),
-          Button(
-              txt: 'ابحث',
-              onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => ResultScreen()));
-              },
-              isBigButten: true)
+          BlocBuilder<TableBloc, TableState>(
+            builder: (context, state) {
+              return Button(
+                  txt: 'ابحث',
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => ResultScreen(
+                                adults: state.adult, children: state.child)));
+                    context
+                        .read<TableBloc>()
+                        .add(IncreaseAdult(adult: -1, child: 0));
+                  },
+                  isBigButten: true);
+            },
+          )
         ],
       ),
     );

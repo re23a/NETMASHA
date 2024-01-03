@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:netmasha/blocs/favorite_bloc/favorite_bloc.dart';
+import 'package:netmasha/blocs/favorite_bloc/favorite_event.dart';
+import 'package:netmasha/blocs/favorite_bloc/favorite_state.dart';
 import 'package:netmasha/models/experience_model.dart';
 import 'package:netmasha/screens/details_screen.dart';
 import 'package:netmasha/styles/colors.dart';
@@ -87,9 +91,29 @@ class Activities extends StatelessWidget {
                           isBigButten: false,
                           inHomePage: true,
                         ),
-                        IconButton(
-                            onPressed: () {},
-                            icon: const Icon(Icons.favorite_border))
+                        BlocBuilder<FavoriteBloc, FavoriteState>(
+                          builder: (context, state) {
+                            return IconButton(
+                                onPressed: () {
+                                  if (state.favorites.contains(experience.id)) {
+                                    context.read<FavoriteBloc>().add(
+                                        RemoveFavoriteEvent(
+                                            id: experience.id!));
+                                  } else {
+                                    context.read<FavoriteBloc>().add(
+                                        AddFavoriteEvent(id: experience.id!));
+                                  }
+                                },
+                                icon: Icon(
+                                    state.favorites.contains(experience.id)
+                                        ? Icons.favorite
+                                        : Icons.favorite_border,
+                                    color:
+                                        state.favorites.contains(experience.id)
+                                            ? Colors.redAccent
+                                            : Colors.black));
+                          },
+                        )
                       ],
                     ),
                   ],

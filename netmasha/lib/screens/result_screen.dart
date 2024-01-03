@@ -4,7 +4,9 @@ import 'package:netmasha/styles/colors.dart';
 import 'package:netmasha/widgets/ResultContainer.dart';
 
 class ResultScreen extends StatelessWidget {
-  const ResultScreen({super.key});
+  const ResultScreen({super.key, required this.adults, required this.children});
+  final int adults;
+  final int children;
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +43,10 @@ class ResultScreen extends StatelessWidget {
                       itemCount: snapshot.data!.length,
                       itemBuilder: (context, index) {
                         return ResultContainer(
-                            experience: snapshot.data![index]);
+                            experience: snapshot.data![index],
+                            children: children,
+                            adults: adults,
+                            );
                       },
                       separatorBuilder: (context, index) {
                         return const SizedBox(height: 24);

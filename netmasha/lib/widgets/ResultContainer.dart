@@ -3,8 +3,14 @@ import 'package:netmasha/models/experience_model.dart';
 import 'package:netmasha/styles/colors.dart';
 
 class ResultContainer extends StatelessWidget {
-  const ResultContainer({super.key, required this.experience});
+  const ResultContainer(
+      {super.key,
+      required this.experience,
+      required this.adults,
+      required this.children});
   final ExperienceModel experience;
+  final int adults;
+  final int children;
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +51,7 @@ class ResultContainer extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    "${experience.adultPrice.toString()} ر.س",
+                    "${experience.adultPrice! * adults + experience.childPrice! * children} ر.س",
                     style: const TextStyle(
                       color: Colors.green,
                       fontSize: 20,
