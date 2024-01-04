@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:netmasha/models/experience_model.dart';
 import 'package:netmasha/styles/colors.dart';
 import 'package:netmasha/widgets/EventsContainer.dart';
 
@@ -31,12 +32,14 @@ class FavoritePage extends StatelessWidget {
       ),
       body: ListView(
         shrinkWrap: true,
-        children: const [
+        children: [
           EventsContainer(
-            image: "assets/amazing-young-cowgirl-sitting-horse-outdoors.jpg",
-            title: 'ركوب الخيل ',
-            description:
-                'تجربة فريدة لركوب الخيل مع العائلة في اسطبل خاص يمنحك تجربة متميزة',
+            experience: ExperienceModel(
+                title: "ركوب الخيل",
+                description:
+                    "تجربة فريدة لركوب الخيل مع العائلة في اسطبل خاص يمنحك تجربة فريدة",
+                photoUrl:
+                    "https://ar.timeoutriyadh.com/cloud/artimeoutriyadh/2021/10/21/equestrian-club.jpg"),
             isLike: true,
           ),
         ],

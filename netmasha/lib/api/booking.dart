@@ -10,7 +10,6 @@ class Booking extends Apis {
     try {
       final SharedPreferences prefs = await SharedPreferences.getInstance();
       String token = prefs.getString("token") ?? "";
-      print(body);
       final http.Response response =
           await postMethod(body: body, endpoint: _post, token: token);
       return response;
@@ -28,6 +27,7 @@ class Booking extends Apis {
         endpoint: _get,
         token: token,
       );
+      print(response.body);
       return response;
     } catch (error) {
       print('Error during getting booking: $error');

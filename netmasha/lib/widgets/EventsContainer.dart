@@ -1,17 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:netmasha/models/experience_model.dart';
 import 'package:netmasha/styles/colors.dart';
 
 class EventsContainer extends StatelessWidget {
   const EventsContainer({
     super.key,
-    required this.image,
-    required this.title,
-    required this.description,
+    required this.experience,
     this.isLike = false,
   });
-  final String image;
-  final String title;
-  final String description;
+  final ExperienceModel experience;
   final bool isLike;
   @override
   Widget build(BuildContext context) {
@@ -40,8 +37,8 @@ class EventsContainer extends StatelessWidget {
                       borderRadius: BorderRadius.circular(7.28),
                     ),
                   ),
-                  child: Image.asset(
-                    image,
+                  child: Image.network(
+                    experience.photoUrl.toString(),
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -53,7 +50,7 @@ class EventsContainer extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      title,
+                      experience.title.toString(),
                       style: TextStyle(
                         color: black,
                         fontSize: 18,
@@ -66,7 +63,7 @@ class EventsContainer extends StatelessWidget {
                     SizedBox(
                       width: 150,
                       child: Text(
-                        description,
+                        experience.description.toString(),
                         style: TextStyle(
                           color: black,
                           fontSize: 14,

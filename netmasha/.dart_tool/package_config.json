@@ -9,7 +9,7 @@
     },
     {
       "name": "args",
-      "rootUri": "file:///Users/reema/.pub-cache/hosted/pub.dev/args-2.4.2",
+      "rootUri": "file:///C:/Users/zezoo/AppData/Local/Pub/Cache/hosted/pub.dev/args-2.4.2",
       "packageUri": "lib/",
       "languageVersion": "2.19"
     },
@@ -57,7 +57,7 @@
     },
     {
       "name": "easy_date_timeline",
-      "rootUri": "file:///Users/reema/.pub-cache/hosted/pub.dev/easy_date_timeline-1.0.2",
+      "rootUri": "file:///C:/Users/zezoo/AppData/Local/Pub/Cache/hosted/pub.dev/easy_date_timeline-1.0.2",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
@@ -117,7 +117,7 @@
     },
     {
       "name": "flutter_svg",
-      "rootUri": "file:///Users/reema/.pub-cache/hosted/pub.dev/flutter_svg-2.0.9",
+      "rootUri": "file:///C:/Users/zezoo/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_svg-2.0.9",
       "packageUri": "lib/",
       "languageVersion": "2.19"
     },
@@ -159,7 +159,7 @@
     },
     {
       "name": "icons_plus",
-      "rootUri": "file:///Users/reema/.pub-cache/hosted/pub.dev/icons_plus-5.0.0",
+      "rootUri": "file:///C:/Users/zezoo/AppData/Local/Pub/Cache/hosted/pub.dev/icons_plus-5.0.0",
       "packageUri": "lib/",
       "languageVersion": "2.16"
     },
@@ -213,7 +213,7 @@
     },
     {
       "name": "path_parsing",
-      "rootUri": "file:///Users/reema/.pub-cache/hosted/pub.dev/path_parsing-1.0.1",
+      "rootUri": "file:///C:/Users/zezoo/AppData/Local/Pub/Cache/hosted/pub.dev/path_parsing-1.0.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -237,7 +237,7 @@
     },
     {
       "name": "petitparser",
-      "rootUri": "file:///Users/reema/.pub-cache/hosted/pub.dev/petitparser-6.0.2",
+      "rootUri": "file:///C:/Users/zezoo/AppData/Local/Pub/Cache/hosted/pub.dev/petitparser-6.0.2",
       "packageUri": "lib/",
       "languageVersion": "3.2"
     },
@@ -261,7 +261,7 @@
     },
     {
       "name": "progresso",
-      "rootUri": "file:///Users/reema/.pub-cache/hosted/pub.dev/progresso-0.3.0",
+      "rootUri": "file:///C:/Users/zezoo/AppData/Local/Pub/Cache/hosted/pub.dev/progresso-0.3.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -369,19 +369,19 @@
     },
     {
       "name": "vector_graphics",
-      "rootUri": "file:///Users/reema/.pub-cache/hosted/pub.dev/vector_graphics-1.1.9+1",
+      "rootUri": "file:///C:/Users/zezoo/AppData/Local/Pub/Cache/hosted/pub.dev/vector_graphics-1.1.9+1",
       "packageUri": "lib/",
       "languageVersion": "2.17"
     },
     {
       "name": "vector_graphics_codec",
-      "rootUri": "file:///Users/reema/.pub-cache/hosted/pub.dev/vector_graphics_codec-1.1.9+1",
+      "rootUri": "file:///C:/Users/zezoo/AppData/Local/Pub/Cache/hosted/pub.dev/vector_graphics_codec-1.1.9+1",
       "packageUri": "lib/",
       "languageVersion": "2.17"
     },
     {
       "name": "vector_graphics_compiler",
-      "rootUri": "file:///Users/reema/.pub-cache/hosted/pub.dev/vector_graphics_compiler-1.1.9+1",
+      "rootUri": "file:///C:/Users/zezoo/AppData/Local/Pub/Cache/hosted/pub.dev/vector_graphics_compiler-1.1.9+1",
       "packageUri": "lib/",
       "languageVersion": "2.19"
     },
@@ -411,7 +411,7 @@
     },
     {
       "name": "xml",
-      "rootUri": "file:///Users/reema/.pub-cache/hosted/pub.dev/xml-6.5.0",
+      "rootUri": "file:///C:/Users/zezoo/AppData/Local/Pub/Cache/hosted/pub.dev/xml-6.5.0",
       "packageUri": "lib/",
       "languageVersion": "3.2"
     },
@@ -422,7 +422,7 @@
       "languageVersion": "3.2"
     }
   ],
-  "generated": "2024-01-01T10:50:00.892095Z",
+  "generated": "2024-01-04T03:27:34.510332Z",
   "generator": "pub",
   "generatorVersion": "3.2.0"
 }
